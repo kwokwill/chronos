@@ -1,0 +1,80 @@
+body {
+    /* Location of the image */
+    background-image: url(images/photo-1541140911322-98afe66ea6da.jpg);
+  
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+  
+    /* Background image doesn't tile */
+    background-repeat: no-repeat;
+  
+    /* Background image is fixed in the viewport so that it doesn't move when 
+    the content's height is greater than the image's height */
+    background-attachment:fixed;
+  
+    /* This is what makes the background image rescale based
+     on the container's size */
+    background-size: cover;
+    
+   
+    /* Set a background color that will be displayed
+     while the background image is loading */
+    background-color: #464646;
+    -webkit-background-size: cover;
+    width: 100%;
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding:0;
+       
+
+    }
+
+.hero {
+    
+    /* sizing */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Julius Sans One;
+
+    
+   
+}
+
+.hero h1 {
+    color:darkblue;
+    font-size: 10em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid blue;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  
+}
+
+.hero .btn {
+    font-size: 3em;
+    text-decoration: none;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+main {
+    height: 3000px;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+main p {
+    color:black;
+   
+    font-size: 16px;
+}
