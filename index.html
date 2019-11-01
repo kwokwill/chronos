@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Chronos</title>
+	<meta charset="utf-8">
+	<!-- Firebase related things -->
+
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+
+
+	<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+	<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA1apgrm49I2zydiqO1jiVj78p2sfoqLBY",
+    authDomain: "chronos-c84fe.firebaseapp.com",
+    databaseURL: "https://chronos-c84fe.firebaseio.com",
+    projectId: "chronos-c84fe",
+    storageBucket: "chronos-c84fe.appspot.com",
+    messagingSenderId: "114329534553",
+    appId: "1:114329534553:web:c78a977e4bb6ac3d863148",
+    measurementId: "G-7MPBJSPZKX"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+</head>
+
+<body>
+	<h1> Welcome to William's demo app </h1>
+	<div id="firebaseui-auth-container"></div>
+	<div id="loader">Loading...</div>
+
+
+	<script>
+		// Initialize the FirebaseUI Widget using Firebase.
+		var ui = new firebaseui.auth.AuthUI(firebase.auth());
+		var uiConfig = {
+			callbacks: {
+				signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+					// User successfully signed in.
+					// Return type determines whether we continue the redirect automatically
+					// or whether we leave that to developer to handle.
+					return true;
+				},
+				uiShown: function () {
+					// The widget is rendered.
+					// Hide the loader.
+					document.getElementById('loader').style.display = 'none';
+				}
+			},
+			// Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+			signInFlow: 'popup',
+			signInSuccessUrl: 'Course.html',
+			signInOptions: [
+				// Leave the lines as is for the providers you want to offer your users.
+				// firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+				// firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+				// firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+				// firebase.auth.GithubAuthProvider.PROVIDER_ID,
+				firebase.auth.EmailAuthProvider.PROVIDER_ID,
+				// firebase.auth.PhoneAuthProvider.PROVIDER_ID
+			],
+			// Terms of service url.
+			tosUrl: 'main.html',
+			// Privacy policy url.
+			privacyPolicyUrl: 'main.html'
+		};
+		// The start method will wait until the DOM is loaded.
+		ui.start('#firebaseui-auth-container', uiConfig);
+	</script>
+
+
+</body>
+</html>
