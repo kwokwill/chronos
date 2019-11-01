@@ -12,34 +12,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="../css/postingForm.css">
     <!-- Optional styles and scripts of your own -->
     <!-- <link rel="stylesheet" href="styles/style.css">-->
     <!-- <script src="scripts/script.js"></script>-->
 </head>
 
-    <style>
-        label {
-            margin-left: 20px;
-        }
-        
-        form {
-            margin: 30px;
-        }
-        #content {
-            background-color: azure;
-            height: 800px;
-        }
-    </style>
+    
 <body>
     <div id="content">
         <div> </div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<<<<<<< HEAD
     <a class="navbar-brand" href="../Course.html"><span id="homepagetitle">Chronos</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+=======
+  <a class="navbar-brand" href="../Course.html">Chronos</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+>>>>>>> 91e9714f0552494f2e6f44a3fefa52378a4891a6
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
@@ -73,7 +68,7 @@
     
     <form onSubmit="JavaScript:ExampleJS()">
   <div class="form-group row">
-    <label for="dateTitle" class="col-sm-2 col-form-label">Event Name</label>
+      <label for="dateTitle" class="col-sm-2 col-form-label">Event</label>
     <div class="col-sm-7">
       <input type="text" class="form-control" id="dateTitle" placeholder="Event" autofocus required>
     </div>
@@ -86,18 +81,18 @@
     </div>
   </div>
   <div class="form-group row">
-    <label for="description" class="col-sm-2 col-form-label">Description</label>
+      <label for="description" class="col-sm-2 col-form-label">Description</label>
     <div class="col-sm-7">
       <input type="textField" class="form-control" id="datePicker" placeholder="Additional information">
     </div>
   </div>        
   <div class="form-group row">
-    <div class="col-sm-10 offset-sm-2">
-      <button type="submit" class="btn btn-primary">Post it!</button>
+    <div class="col-sm-10 offset-sm-4">
+      <button  id="postButton" type="submit" class="btn btn-primary">Post it!</button>
     </div>
   </div>
 </form>
-   
+   a00997889
      <script type="text/javascript">
      function ExampleJS(){
         var date = document.getElementById("datePicker").value;
@@ -110,15 +105,15 @@
 
     
     
-        <FORM NAME="myform" onSubmit="JavaScript:ExampleJS()">
+       
+    </div>
+    
+</body>
+</html>
+ <FORM NAME="myform" onSubmit="JavaScript:ExampleJS()">
 
              First name: <input type="text" id="fname" name="firstname" /><br />
              Last name:  <input type="text" id="lname" name="lastname" /><br />
             <input name="Submit"  type="submit" value="Update" />
         </FORM>
     
-    </div>
-    
-</body>
-</html>
-
