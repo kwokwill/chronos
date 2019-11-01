@@ -1,0 +1,22 @@
+
+label {
+    
+    font-weight: bold;
+    
+}
+form {
+    margin: 30px;
+    font-size: 20px;
+    
+}
+#content {
+    background-color: azure;
+    height: 800px;
+}
+    
+
+
+#postButton {
+    
+    font-size: 25px;
+}
