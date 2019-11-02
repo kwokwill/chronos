@@ -11,12 +11,43 @@ form {
 }
 #content {
     background-color: azure;
-    height: 800px;
+    width: 100%;    
+    background-size: contain;
+    height: 750px;
 }
     
-
+#deskwork {
+    width: 100%;
+    height: 20%;
+}
+#ok {
+    font-size: 22px;
+    padding: 4px;
+    
+}
 
 #postButton {
-    
-    font-size: 25px;
+    margin-top: 20px;
+    font-size: 22px;
 }
+
+
+@media only screen and (min-width: 700px) {
+    #deskwork {
+        width: 100%;
+        height: 100%;
+    }
+}
+    
+    
+
+
+
+
+
+
+
+
+
+
+
