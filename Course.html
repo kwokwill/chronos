@@ -39,16 +39,16 @@
       overflow: hidden;
       margin: 20px;
     }
-
+/* box takes perspective of all box parameters*/
     .box {
       float: left;
       position: relative;
       width: 50%;
       padding-bottom: 50%;
-      margin-top: 10px;
-        
+      margin-top: 1px;
+        margin-bottom: 20px;
     }
-
+/* maxwidth and maxheight with shadow box*/
     .boxInner {
       position: absolute;
       left: 10px;
@@ -57,11 +57,25 @@
       bottom: 10px;
       overflow: hidden;
       border-radius: 25px;
-        
+    box-shadow: 10px 0 5px -2px #888;
+        max-width: 400px;
+        max-height: 500px;   
     }
+      
+          
+      
+/*      allows linkBox and image gallery to have black font before applying hover */
       .linkBox {
-          color:black;  
+          color: black; 
+          
       }
+      /* linkbox image gallery respond to hover */
+      .box a:hover {
+          color:white;  
+          text-decoration: none;
+      }
+      
+      
     .boxInner p {
       margin: 0;
       padding: 10px;
@@ -69,10 +83,14 @@
       height: 70%;
       background-color: orange;
       text-align: center;
-/* adds opacity*/
+/* adds opacity and maxwidth and height*/
       background: rgba(251, 127, 3, 0.4);
+        
+        
+        
     }
 
+      /* maxwidth height to match all */
     .boxInner .titleBox {
 
       bottom: 0;
@@ -86,6 +104,8 @@
       text-align: center;
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
+        max-width: 400px;
+        max-height: 300px;
         
         
     }
@@ -129,7 +149,7 @@
     </div>
   </nav>
 
-  <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true" style="margin-left: 3%;">
     <div class="toast-header">
       <strong class="mr-auto">Bootstrap</strong>
       <small>11 mins ago</small>
@@ -144,7 +164,8 @@
 
   <section>
     <div id="imageGallery">
-      <h2>BCIT CST Course List</h2>
+<!--        added style textalign for centering-->
+      <h2 style="text-align: center">BCIT CST Course List</h2>
 
       <div class="box">
         <div class="boxInner">

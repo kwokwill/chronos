@@ -10,10 +10,10 @@ form {
     
 }
 #content {
-    background-image: url(../bgPics/texture1.jpg);
+    background-color: azure;
     width: 100%;    
     background-size: contain;
-    height: 800px;
+    height: 750px;
 }
     
 #deskwork {
