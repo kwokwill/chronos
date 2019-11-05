@@ -105,8 +105,8 @@
             
             #chronos1{
                 float:right;
-                max-height: 300px;
-                max-width: 300px;
+                max-height: 450px;
+                max-width: 450px;
                 width:100%;
                 height:30%;
                 padding-left: 15%;
@@ -129,25 +129,41 @@
                 height: 50%;
             }
             
+            .facts {
+                font-size: 70px;
+                margin-bottom: -20px;
+                font-family: Cinzel;
+            }
+            
+            .factNote {
+                font-size: 45px;
+                border-bottom: 4px solid white;
+                display: block;
+                margin: 0 10% 0 10%;
+                padding-bottom: 30px;
+                
+            }
+            
             
             @media only screen and (min-width: 480px) {
                 #chronos1 {
                     width: 100%;
                     padding: 0 20% 10% 20%;
                     display: block;
-                    max-width: 400px;
-                    max-height: 400px    
+                    max-width: 600px;
+                    max-height: 600px    
                 }
                 p {
                     display: block;
+                    line-height: 60px;
                 }
                 #onTheGo {
                     display: block;
                     
                     max-height: 1000px;
-                    max-width: 100%;
+                    max-width: 1000px;
                     width: 100%;
-                    height: 50%;
+                    height: 60%;
             }
             }
             
@@ -191,13 +207,14 @@
         <p>sadsadsadasdasda </p>
         <p>sadsadsadasdasda </p>
             
-            <h3> Make Time For Yourself </h3>
-            <h3> See Your Progress </h3>
-            
-            <h3> Be On the Go </h3>
-            <img id="onTheGo" src="bgPics/onTheGo.png">
-            <p> ok</p>
-            <p> ok</p>
+            <h3 class="facts"> Make Time For Yourself </h3>
+            <h3 class="facts"> See Your Progress </h3>
+            <img id="progress" src="bgPics/progress.png"/>
+            <div class="factNote"> </div>
+            <h3 class="facts"> Be On the Go </h3>
+            <img id="onTheGo" src="bgPics/onTheGo.png"/>
+            <div class="factNote"> See your schedule on all your devices<br> Anytime, Anywhere</div>
+            <div> ok</div>
             <p> ok</p>
             <p> ok</p>
             <p> ok</p>
