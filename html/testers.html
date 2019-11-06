@@ -11,7 +11,7 @@
 </head>
     <style>/* Overall body and content */
 body { 
-    height: 100%;
+    height: 1000px;
     width: 100%;
     margin: 0;
     background: #005C97;    
@@ -23,11 +23,11 @@ body {
 } 
 .content {
     overflow: none;
-    max-width: 790px;
+    max-width: 100%;
     padding: 0px 0;
-    height: 500px;
+    height: 100%;
     position: relative;
-    margin: 20px auto;
+    margin: 0 auto;
     background: #52A0FD;
     background: -moz-linear-gradient(right,  #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
     background: -webkit-linear-gradient(right,  #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
@@ -87,8 +87,9 @@ body {
 .calendar-container  { 
     float: left;
     position: relative;
-    margin: 0px auto; 
-    height: 100%;
+    margin: 0px auto;
+    height: 150%;
+    width: 100%;
     background: #fff;
     font: 13px Helvetica, Arial, san-serif; 
     display: inline-block; 
@@ -97,13 +98,15 @@ body {
 }
 .calendar-container:after{
     clear:both;
+    
 }
 .calendar {
     display: table;
+    width: 100%;
 }
 
 /* Calendar Header */
-.year-header { 
+.year-header {
     background: #52A0FD;
     background: -moz-linear-gradient(left,  #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
     background: -webkit-linear-gradient(left,  #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
@@ -112,15 +115,16 @@ body {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    height: 40px; 
+    height: 80px;
     text-align: center;
     position: relative; 
     color:#fff; 
     border-top-left-radius: 3px;
-} 
+    padding-top: 40px;
+}
 .year-header span { 
     display:inline-block; 
-    font-size: 20px;
+    font-size: 60px;
     line-height:40px; 
 }
 .left-button, .right-button { 
@@ -131,13 +135,12 @@ body {
 } 
 .left-button { 
     left:0; 
-    -webkit-border-top-left-radius: 5px; 
-    -moz-border-radius-topleft: 5px; 
-    border-top-left-radius: 5px; 
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-left-radius: 5px;
 } 
 .right-button { 
     right:0; 
-    top:0; 
     -webkit-border-top-right-radius: 5px; 
     -moz-border-radius-topright: 5px; 
     border-top-right-radius: 5px; 
@@ -192,7 +195,19 @@ body {
 .days-table, .dates-table, .months-table { 
     border-collapse:separate; 
     text-align: center;
+    width: 100%;
+    font-size: 30pt;
 } 
+      
+      .days-table {
+        padding-top: 45px;
+        font-weight: 600;
+      }
+      
+      .months-table {
+        height: 80px;
+      }
+      
 .day { 
     height: 26px;
     width: 26px;
@@ -209,15 +224,16 @@ body {
     width: 26px;
     padding: 0 2px;
     padding-top:10px;
+    padding-bottom: 15px;
     line-height: 26px; 
     text-transform:uppercase; 
-    font-size: 11px; 
+    font-size: 25px; 
     color:#9e9e9e; 
     transition: all 250ms;
 }
 .active-month {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 45px;
     color: #FF1744;
     text-shadow: 0 1px 4px RGBA(255, 50, 120, .8);
 }
@@ -230,16 +246,20 @@ body {
 .table-date {
     cursor: default;
     color:#2b2b2b; 
-    height:26px;
+    height: 90px;
     width: 26px;
-    font-size: 15px;
+    font-size: 50px;
     padding: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     line-height:26px; 
     text-align:center; 
     border-radius: 50%;
     border: 2px solid transparent;
     transition: all 250ms;
 }
+      
+
 .table-date:not(.nil):hover { 
     border-color: #FF1744;
     box-shadow: 0 2px 6px RGBA(255, 50, 120, .9);
@@ -248,11 +268,13 @@ body {
     border-color:#52A0FD;
     box-shadow: 0 2px 8px RGBA(130, 180, 255, .9);
 }
-.active-date{ 
+.active-date {
     background: #FF1744;
     box-shadow: 0 2px 8px RGBA(255, 50, 120, .9);
     color: #fff;
-}
+    width: 90px;
+      }
+      
 .event-date.active-date {
     background: #52A0FD;
     box-shadow: 0 2px 8px RGBA(130, 180, 255, .9);
@@ -301,87 +323,6 @@ body {
     border-color: #FF1744;
 }
 
-/* Tablets and smaller */
-@media only screen and (max-width: 780px) {
-    .content {
-        overflow: visible;
-        position:relative;
-        max-width: 100%;
-        width: 370px;
-        height: 100%;
-        background: #52A0FD;
-        background: -moz-linear-gradient(left,  #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
-        background: -webkit-linear-gradient(left,  #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
-        background: linear-gradient(to right,  #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);  
-    }
-    .dialog {
-        width:370px;
-        height: 450px;
-        border-radius: 3px;
-        top:0;
-        left:0;
-    }
-    .events-container {
-        float:none;
-        overflow: visible;
-        margin: 0 auto;
-        padding: 0;
-        display: block;
-        left: 0;
-        border-radius: 3px;
-    }
-
-    .calendar-container {
-        float: none;
-        padding: 0;
-        margin: 0 auto;
-        margin-right: 0;
-        display: block;
-        left: 0;
-        border-radius: 3px;
-        box-shadow: 3px 8px 16px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-        -moz-box-shadow: 3px 8px 16px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-        -webkit-box-shadow: 3px 8px 16px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    }
-}
-
-/* Small phone screens */
-@media only screen and (max-width: 400px) {
-    .content, .events-container, .year-header, .calendar-container {
-        width: 320px;
-    }
-    .dialog {
-        width: 320px;
-    }
-    .months-table {
-        display: block;
-        margin: 0 auto;
-        width: 320px;
-    }
-    .event-card {
-        width: 300px;
-    }
-    .day {
-        padding: 0 7px;
-    }
-    .month {
-        display: inline-block;
-        padding: 10px 10px;
-        font-size: .8rem;
-    }
-    .table-date {
-        width: 20px;
-        height: 20px;
-        line-height: 20px;
-    }
-    .event-name, .event-count, .event-cancelled {
-        font-size: .8rem;
-    }
-    .add-button{
-        bottom: 10px;
-        right: 10px;
-        padding: 0.5rem 1.5rem;
-    }
 } </style>
 
 <body>
@@ -402,6 +343,9 @@ body {
               <td class="month">Apr</td>
               <td class="month">May</td>
               <td class="month">Jun</td>
+              
+            </tr>
+            <tr class="months-row">
               <td class="month">Jul</td>
               <td class="month">Aug</td>
               <td class="month">Sep</td>
@@ -430,8 +374,7 @@ body {
         <button class="button" id="add-button">Add Event</button>
       </div>
     </div>
-    <div class="events-container">
-    </div>
+    
     <div class="dialog" id="dialog">
       <h2 class="dialog-header"> Add New Event </h2>
       <form class="form" id="form">
@@ -444,6 +387,11 @@ body {
           <input type="button" value="OK" class="button" id="ok-button">
         </div>
       </form>
+    </div>
+  </div>
+  
+  <div>
+    <div class="events-container">
     </div>
   </div>
   <!-- Dialog Box-->
