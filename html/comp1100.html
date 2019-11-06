@@ -9,6 +9,7 @@
   
     <!-- Bootstrap for Mobile-first -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -17,6 +18,45 @@
     <!-- Optional styles and scripts of your own -->
     <!-- <link rel="stylesheet" href="styles/style.css">-->
     <!-- <script src="scripts/script.js"></script>-->
+    <style>
+        html, body {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            background-image: url(blueiso.png);
+        }
+        .custom {
+            margin-left: 10px;
+            margin-bottom: 10px;
+            float:none;
+            align-content: center;
+            width: 95%;
+        }
+        #inputs {
+            margin-top: 10px;
+            background-color: white;
+            width: 54%;
+            margin-left: 25%;
+            border: 1px solid black;
+        }
+        form {
+            margin: 10px;
+            width: 210px;
+        }
+        form label{
+            font-weight: 600;
+            background-color: white;
+            display: inline-block;
+            text-align: right;
+            float: left;
+        }
+        .form input{
+            display: inline-block;
+            text-align: left;
+            float: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -51,7 +91,7 @@
 </nav>
 <div id="titleBar" style= "text-align: center"> COMP 1100 </div>
     <div class="list-group">
-  <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
+  <a href="#!" class="custom list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">List group item heading</h5>
       <small>3 days ago</small>
@@ -59,7 +99,7 @@
     <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
     <small>Donec id elit non mi porta.</small>
   </a>
-  <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
+  <a href="#!" class="custom list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">List group item heading</h5>
       
@@ -67,7 +107,7 @@
     <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
     <small class="text-muted">Donec id elit non mi porta.</small>
   </a>
-  <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
+  <a href="#!" class="custom list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">List group item heading</h5>
       <small class="text-muted">3 days ago</small>
@@ -86,14 +126,14 @@
      </script>
 
     
-    
+    <div id="inputs">
         <FORM NAME="myform" onSubmit="JavaScript:ExampleJS()">
 
-             First name: <input type="text" id="fname" name="firstname" /><br />
-             Last name:  <input type="text" id="lname" name="lastname" /><br />
+             <label>First Name:</label><input type="text" id="fname" name="firstname" class="textfield"/><br />
+             <label>Last Name:</label><input type="text" id="lname" name="lastname" class="textfield"/><br />
             <input name="Submit"  type="submit" value="Update" />
         </FORM>
-    
+    </div>
 
     
 </body>
