@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +18,14 @@
   <link rel="stylesheet" href="styles/style.css">
   <script src="scripts/script.js"></script>
 
+ 
+
   <style>
+    
+/*    Imported fonts*/
+    
+    @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Yeon+Sung&display=swap');
+    
     html,
     body {
       margin: 0;
@@ -29,26 +33,29 @@
     }
 
     body {
-      height: 1300px;
-      background-image: url(bgPics/wood2.jpg);
-      background-repeat: round;
-      background-size: 100% auto;
+      height: auto;
+      background-image: url(GeometricGradientBackgrounds/BlueTealYellow.jpg);
+      background-repeat: space;
+      background-size: auto auto;
+      font-family: 'PT Sans Narrow', sans-serif;
     }
 
     #imageGallery {
       overflow: hidden;
       margin: 20px;
     }
-/* box takes perspective of all box parameters*/
+
+    /* box takes perspective of all box parameters*/
     .box {
       float: left;
       position: relative;
       width: 50%;
       padding-bottom: 50%;
       margin-top: 1px;
-        margin-bottom: 20px;
+      margin-bottom: 20px;
     }
-/* maxwidth and maxheight with shadow box*/
+
+    /* maxwidth and maxheight with shadow box*/
     .boxInner {
       position: absolute;
       left: 10px;
@@ -57,25 +64,31 @@
       bottom: 10px;
       overflow: hidden;
       border-radius: 25px;
-    box-shadow: 10px 0 5px -2px #888;
-        max-width: 400px;
-        max-height: 500px;   
+      box-shadow: 10px 10px 10px -6px rgba(132, 29, 179, 0.8);
+      max-width: 400px;
+      max-height: 500px;
     }
-      
-          
-      
-/*      allows linkBox and image gallery to have black font before applying hover */
-      .linkBox {
-          color: black; 
-          
-      }
-      /* linkbox image gallery respond to hover */
-      .box a:hover {
-          color:white;  
-          text-decoration: none;
-      }
-      
-      
+
+    #homepagetitle {
+      font-family: 'Yeon Sung';
+      font-size: 30pt;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    /*      allows linkBox and image gallery to have black font before applying hover */
+    .linkBox {
+      color: black;
+
+    }
+
+    /* linkbox image gallery respond to hover */
+    .box a:hover {
+      color: white;
+      text-decoration: none;
+    }
+
+
     .boxInner p {
       margin: 0;
       padding: 10px;
@@ -83,14 +96,14 @@
       height: 70%;
       background-color: orange;
       text-align: center;
-/* adds opacity and maxwidth and height*/
-      background: rgba(251, 127, 3, 0.4);
-        
-        
-        
+      /* adds opacity and maxwidth and height*/
+      background: rgba(29, 154, 179, 0.5);
+
+
+
     }
 
-      /* maxwidth height to match all */
+    /* maxwidth height to match all */
     .boxInner .titleBox {
 
       bottom: 0;
@@ -102,28 +115,28 @@
       color: #FFF;
       padding: 10px;
       text-align: center;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
-        max-width: 400px;
-        max-height: 300px;
-        
-        
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      max-width: 400px;
+      max-height: 300px;
+
+
     }
+
   </style>
 </head>
 
 <body>
 
-  
+
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#"><span id="homepagetitle">Chronos</span></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    
+
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
@@ -164,13 +177,15 @@
 
   <section>
     <div id="imageGallery">
-<!--        added style textalign for centering-->
+      <!--        added style textalign for centering-->
       <h2 style="text-align: center">BCIT CST Course List</h2>
 
       <div class="box">
         <div class="boxInner">
-          <a class="linkBox" href="html/comp1100.html"><p>COMP1100-Program Fundamentals</p>
-              <div class="titleBox">Items Due: 3</div></a>
+          <a class="linkBox" href="html/comp1100.html">
+            <p>COMP1100-Program Fundamentals</p>
+            <div class="titleBox">Items Due: 3</div>
+          </a>
         </div>
       </div>
       <div class="box">
@@ -215,6 +230,7 @@
 
   <script>
     $('.toast').toast();
+
   </script>
 
 
