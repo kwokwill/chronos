@@ -1,111 +1,136 @@
-
 <html lang="en">
+
 <head>
-    <meta charset="utf-8"> 
-    <title>Post-It!</title>
-    <meta name="posting-page" content="contentPoster">
-    <meta name="group 16" content="posting">
+  <meta charset="utf-8">
+  <title>Post-It!</title>
+  <meta name="posting-page" content="contentPoster">
+  <meta name="group 16" content="posting">
+
+  <!-- Bootstrap for Mobile-first -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/postingForm.css">
+  <!-- Optional styles and scripts of your own -->
+  <!-- <link rel="stylesheet" href="styles/style.css">-->
+  <!-- <script src="scripts/script.js"></script>-->
+  <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>    -->
+
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   
-    <!-- Bootstrap for Mobile-first -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/postingForm.css">
-    <!-- Optional styles and scripts of your own -->
-    <!-- <link rel="stylesheet" href="styles/style.css">-->
-    <!-- <script src="scripts/script.js"></script>-->
-    <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>    -->
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDIbfnu2LTnp5WspUXxh9VQAefZvRS18lU",
+      authDomain: "oct31v2.firebaseapp.com",
+      databaseURL: "https://oct31v2.firebaseio.com",
+      projectId: "oct31v2",
+      storageBucket: "oct31v2.appspot.com",
+      messagingSenderId: "378531187696",
+      appId: "1:378531187696:web:4de70e4fe7bff9d308ab35"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+
+  </script>
 </head>
 
-    
+
 <body>
-    <div id="content">
-        <div> </div>
+  <div id="content">
+    <div> </div>
 
-<!--        adding style="backgroundcolor:yellow" without bglight allows change in color-->
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: aqua">
-  <a class="navbar-brand" href="../Course.html"><img src="../bgPics/logoChronos.png" width="30" height="30" class="d-inline-block align-top" alt=""><span id="ok">Chronos</span> </a>
+    <!--        adding style="backgroundcolor:yellow" without bglight allows change in color-->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: aqua">
+      <a class="navbar-brand" href="../Course.html"><img src="../bgPics/logoChronos.png" width="30" height="30" class="d-inline-block align-top" alt=""><span id="ok">Chronos</span> </a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Course View</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Calendar View</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Settings</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Log-out</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-      
-    
-      
-    
-  <div> <img id="deskwork" src="../bgPics/deskWork.png" alt="deskwork"></div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Course View</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Calendar View</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Log-out</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    
+
+
+
+    <div> <img id="deskwork" src="../bgPics/deskWork.png" alt="deskwork"></div>
+
+
     <form onSubmit="JavaScript:ExampleJS()">
-  <div class="form-group row">
-      <label for="dateTitle" class="col-sm-2 col-form-label">Event</label>
-    <div class="col-sm-7">
-      <input type="text" class="form-control" id="dateTitle" placeholder="Event" autofocus required>
-    </div>
-  </div>        
-        
-        <div class="form-group row">
-    <label for="datePicker" class="col-sm-2 col-form-label">Date</label>
-    <div class="col-sm-7">
-      <input type="date" class="form-control" id="datePicker" placeholder="Date" required>
-    </div>
-  </div>
-  <div class="form-group row">
-      <label for="description" class="col-sm-2 col-form-label">Description</label>
-    <div class="col-sm-7">
-      <input type="textField" class="form-control" id="datePicker" placeholder="Additional information">
-    </div>
-  </div>        
-  <div class="form-group row">
-    <div class="col-sm-10 offset-sm-4">
-      <button  id="postButton" type="submit" class="btn btn-primary">Post it!</button>
-    </div>
-  </div>
-</form>
-   a00997889
-     <script type="text/javascript">
-     function ExampleJS(){
+      <div class="form-group row">
+        <label for="dateTitle" class="col-sm-2 col-form-label">Event</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="dateTitle" placeholder="Event" autofocus required>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="datePicker" class="col-sm-2 col-form-label">Date</label>
+        <div class="col-sm-7">
+          <input type="date" class="form-control" id="datePicker" placeholder="Date" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="description" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-7">
+          <input type="textField" class="form-control" id="datePicker" placeholder="Additional information">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-10 offset-sm-4">
+          <button id="postButton" type="submit" class="btn btn-primary">Post it!</button>
+        </div>
+      </div>
+    </form>
+    a00997889
+    <script type="text/javascript">
+      function ExampleJS() {
         var date = document.getElementById("datePicker").value;
         var eventName = document.getElementById("dateTitle").value;
         alert("The event  is : " + eventName + " and the date is on " + date);
-        
-         
-     }
-     </script>
 
-    
-    
-       
-    </div>
-    
+
+      }
+
+    </script>
+
+
+
+
+  </div>
+
 </body>
+
 </html>
 <!-- <FORM NAME="myform" onSubmit="JavaScript:ExampleJS()">
 
@@ -113,4 +138,3 @@
              Last name:  <input type="text" id="lname" name="lastname" /><br />
             <input name="Submit"  type="submit" value="Update" />
         </FORM> -->
-    
