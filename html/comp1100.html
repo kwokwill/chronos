@@ -16,7 +16,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -34,12 +34,12 @@
 
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-  
+
 
   <!-- Optional styles and scripts of your own -->
   <!-- <link rel="stylesheet" href="styles/style.css">-->
   <!-- <script src="scripts/script.js"></script>-->
-  
+
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -53,22 +53,21 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+
   </script>
-  
-  
-  
-  
+
+
+
+
   <style>
-    
-<<<<<<< HEAD
-    html,
+    <<<<<<< HEAD html,
     body {
       margin: 0px;
       padding: 0px;
     }
 
     body {
-      background-image: url(blueiso.png);
+      background-image: url(../bgPics/blueiso.png);
     }
 
     .custom {
@@ -107,54 +106,61 @@
     }
 
   </style>
-=======
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <!-- Optional styles and scripts of your own -->
-    <!-- <link rel="stylesheet" href="styles/style.css">-->
-    <!-- <script src="scripts/script.js"></script>-->
-    <style>
-        html, body {
-            margin: 0px;
-            padding: 0px;
-        }
-        body {
-            background-image: url(blueiso.png);
-        }
-        .custom {
-            margin-left: 10px;
-            margin-bottom: 10px;
-            float:none;
-            align-content: center;
-            width: 95%;
-        }
-        #inputs {
-            margin-top: 10px;
-            background-color: white;
-            width: 54%;
-            margin-left: 25%;
-            border: 1px solid black;
-        }
-        form {
-            margin: 10px;
-            width: 210px;
-        }
-        form label{
-            font-weight: 600;
-            background-color: white;
-            display: inline-block;
-            text-align: right;
-        }
-        .form input{
-            display: inline-block;
-            text-align: left;
-            float: none;
-        }
-    </style>
->>>>>>> f514bcb653276b362a952cfad5093804588902fe
+  <!-- Optional styles and scripts of your own -->
+  <!-- <link rel="stylesheet" href="styles/style.css">-->
+  <!-- <script src="scripts/script.js"></script>-->
+  <style>
+    html,
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      background-image: url(blueiso.png);
+    }
+
+    .custom {
+      margin-left: 10px;
+      margin-bottom: 10px;
+      float: none;
+      align-content: center;
+      width: 95%;
+    }
+
+    #inputs {
+      margin-top: 10px;
+      background-color: white;
+      width: 54%;
+      margin-left: 25%;
+      border: 1px solid black;
+    }
+
+    form {
+      margin: 10px;
+      width: 210px;
+    }
+
+    form label {
+      font-weight: 600;
+      background-color: white;
+      display: inline-block;
+      text-align: right;
+    }
+
+    .form input {
+      display: inline-block;
+      text-align: left;
+      float: none;
+    }
+
+  </style>
+
 </head>
 
 <body>
@@ -233,19 +239,20 @@
       <input name="Submit" type="submit" value="Update" />
     </FORM>
   </div>
-  
+
   <script>
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-//        console.log(user.displayName);
+        //        console.log(user.displayName);
         document.getElementsByClassName("mb-1").innerHTML = user.displayName;
       } else {
         console.log(user);
       }
     });
-    
-    
-//    db.collection("quotes").doc("777").set({ message: "username" })
+
+
+    //    db.collection("quotes").doc("777").set({ message: "username" })
+
   </script>
 
 </body>
