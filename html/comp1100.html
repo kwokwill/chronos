@@ -1,140 +1,260 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-    <meta charset="utf-8"> 
-    <title>COMP 1930</title>
-    <meta name="COMP 1100 LOADING PAGE" content="listing assignments in course">
-    <meta name="William, Adam, Charlie" content="Chronos">
-  
-    <!-- Bootstrap for Mobile-first -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <!-- Optional styles and scripts of your own -->
-    <!-- <link rel="stylesheet" href="styles/style.css">-->
-    <!-- <script src="scripts/script.js"></script>-->
-    <style>
-        html, body {
-            margin: 0px;
-            padding: 0px;
-        }
-        body {
-            background-image: url(blueiso.png);
-        }
-        .custom {
-            margin-left: 10px;
-            margin-bottom: 10px;
-            float:none;
-            align-content: center;
-            width: 95%;
-        }
-        #inputs {
-            margin-top: 10px;
-            background-color: white;
-            width: 54%;
-            margin-left: 25%;
-            border: 1px solid black;
-        }
-        form {
-            margin: 10px;
-            width: 210px;
-        }
-        form label{
-            font-weight: 600;
-            background-color: white;
-            display: inline-block;
-            text-align: right;
-        }
-        .form input{
-            display: inline-block;
-            text-align: left;
-            float: none;
-        }
-    </style>
+<head>
+  <meta charset="utf-8">
+  <title>COMP 1930</title>
+  <meta name="COMP 1100 LOADING PAGE" content="listing assignments in course">
+  <meta name="William, Adam, Charlie" content="Chronos">
+
+  <!-- Bootstrap for Mobile-first -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Firebase related things -->
+
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+
+
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+
+  <!-- Optional styles and scripts of your own -->
+  <!-- <link rel="stylesheet" href="styles/style.css">-->
+  <!-- <script src="scripts/script.js"></script>-->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDxcuP8iqbfPbtYPwAFh04xEc3SZ-JlNqs",
+      authDomain: "chronos-c7366.firebaseapp.com",
+      databaseURL: "https://chronos-c7366.firebaseio.com",
+      projectId: "chronos-c7366",
+      storageBucket: "chronos-c7366.appspot.com",
+      messagingSenderId: "821932163722",
+      appId: "1:821932163722:web:7531781e1df6f497342373"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+  </script>
+
+
+
+
+  <style>
+    <<<<<<< HEAD html,
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      background-image: url(../bgPics/blueiso.png);
+    }
+
+    .custom {
+      margin-left: 10px;
+      margin-bottom: 10px;
+      float: none;
+      align-content: center;
+      width: 95%;
+    }
+
+    #inputs {
+      margin-top: 10px;
+      background-color: white;
+      width: 54%;
+      margin-left: 25%;
+      border: 1px solid black;
+    }
+
+    form {
+      margin: 10px;
+      width: 210px;
+    }
+
+    form label {
+      font-weight: 600;
+      background-color: white;
+      display: inline-block;
+      text-align: right;
+      float: left;
+    }
+
+    .form input {
+      display: inline-block;
+      text-align: left;
+      float: none;
+    }
+
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Optional styles and scripts of your own -->
+  <!-- <link rel="stylesheet" href="styles/style.css">-->
+  <!-- <script src="scripts/script.js"></script>-->
+  <style>
+    html,
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      background-image: url(blueiso.png);
+    }
+
+    .custom {
+      margin-left: 10px;
+      margin-bottom: 10px;
+      float: none;
+      align-content: center;
+      width: 95%;
+    }
+
+    #inputs {
+      margin-top: 10px;
+      background-color: white;
+      width: 54%;
+      margin-left: 25%;
+      border: 1px solid black;
+    }
+
+    form {
+      margin: 10px;
+      width: 210px;
+    }
+
+    form label {
+      font-weight: 600;
+      background-color: white;
+      display: inline-block;
+      text-align: right;
+    }
+
+    .form input {
+      display: inline-block;
+      text-align: left;
+      float: none;
+    }
+
+  </style>
+
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="../Course.html">Chronos</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <a class="navbar-brand" href="../Course.html">Chronos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Course View</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Calendar View</a>
-      </li> 
-      <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Settings</a>
-      </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Log Out</a>
-      </li>    
-    </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Course View</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Calendar View</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="titleBar" style="text-align: center"> COMP 1100 </div>
+  <div class="list-group">
+    <a href="#!" class="custom list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">List group item heading</h5>
+        <small>3 days ago</small>
+      </div>
+      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+      <small>Donec id elit non mi porta.</small>
+    </a>
+    <a href="#!" class="custom list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">List group item heading</h5>
+
+      </div>
+      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+      <small class="text-muted">Donec id elit non mi porta.</small>
+    </a>
+    <a href="#!" class="custom list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">List group item heading</h5>
+        <small class="text-muted">3 days ago</small>
+      </div>
+      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+      <small class="text-muted">Donec id elit non mi porta.</small>
+    </a>
   </div>
-</nav>
-<div id="titleBar" style= "text-align: center"> COMP 1100 </div>
-    <div class="list-group">
-  <a href="#!" class="custom list-group-item list-group-item-action flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">List group item heading</h5>
-      <small>3 days ago</small>
-    </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small>Donec id elit non mi porta.</small>
-  </a>
-  <a href="#!" class="custom list-group-item list-group-item-action flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">List group item heading</h5>
-      
-    </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small class="text-muted">Donec id elit non mi porta.</small>
-  </a>
-  <a href="#!" class="custom list-group-item list-group-item-action flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">List group item heading</h5>
-      <small class="text-muted">3 days ago</small>
-    </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small class="text-muted">Donec id elit non mi porta.</small>
-  </a>
-</div>
-   
-     <script type="text/javascript">
-     function ExampleJS(){
-        var jFirst = document.getElementById("fname").value;
-        var jLast = document.getElementById("lname").value;
-        alert("Your name is: " + jFirst + " " + jLast);
-     }
-     </script>
 
-    
-    <div id="inputs">
-        <FORM NAME="myform" onSubmit="JavaScript:ExampleJS()">
+  <script type="text/javascript">
+    function ExampleJS() {
+      var jFirst = document.getElementById("fname").value;
+      var jLast = document.getElementById("lname").value;
+      alert("Your name is: " + jFirst + " " + jLast);
+    }
 
-             <label>First Name:</label><input type="text" id="fname" name="firstname" class="textfield"/><br />
-             <label>Last Name:</label><input type="text" id="lname" name="lastname" class="textfield"/><br />
-            <input name="Submit"  type="submit" value="Update" />
-        </FORM>
-    </div>
+  </script>
 
-    
+
+  <div id="inputs">
+    <FORM NAME="myform" onSubmit="JavaScript:ExampleJS()">
+
+      <label>First Name:</label><input type="text" id="fname" name="firstname" class="textfield" /><br />
+      <label>Last Name:</label><input type="text" id="lname" name="lastname" class="textfield" /><br />
+      <input name="Submit" type="submit" value="Update" />
+    </FORM>
+  </div>
+
+  <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        //        console.log(user.displayName);
+        document.getElementsByClassName("mb-1").innerHTML = user.displayName;
+      } else {
+        console.log(user);
+      }
+    });
+
+
+    //    db.collection("quotes").doc("777").set({ message: "username" })
+
+  </script>
+
 </body>
-</html>
 
+</html>

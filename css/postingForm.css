@@ -1,4 +1,6 @@
-
+body {
+    background-color: fuchsia;
+}
 label {
     
     font-weight: bold;
@@ -10,7 +12,7 @@ form {
     
 }
 #content {
-    background-color: azure;
+    
     width: 100%;    
     background-size: contain;
     height: 750px;
@@ -29,6 +31,10 @@ form {
 #postButton {
     margin-top: 20px;
     font-size: 22px;
+}
+
+.navbar {
+    background:transparent;
 }
 
 
@@ -52,6 +58,10 @@ form {
 
 
 
+<<<<<<< HEAD
+
+=======
 #start {
     
 }
+>>>>>>> c40f09488be82ca208eefb98a7365f1fb6c57be8
