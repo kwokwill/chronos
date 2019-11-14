@@ -1,4 +1,6 @@
-
+body {
+    background-color: fuchsia;
+}
 label {
     
     font-weight: bold;
@@ -10,7 +12,7 @@ form {
     
 }
 #content {
-    background-color: azure;
+    
     width: 100%;    
     background-size: contain;
     height: 750px;
@@ -31,6 +33,10 @@ form {
     font-size: 22px;
 }
 
+.navbar {
+    background:transparent;
+}
+
 
 @media only screen and (min-width: 700px) {
     #deskwork {
@@ -40,6 +46,8 @@ form {
 }
     
     
+
+
 
 
 
