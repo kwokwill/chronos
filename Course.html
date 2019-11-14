@@ -14,19 +14,42 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-  <!-- Optional styles and scripts of your own -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+  <!------------------------------------------------------------------------------>
+  <!-- Optional styles and scripts of your own                                  -->
+  <!------------------------------------------------------------------------------>
+  <!--
   <link rel="stylesheet" href="styles/style.css">
   <script src="scripts/script.js"></script>
+-->
 
- 
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDxcuP8iqbfPbtYPwAFh04xEc3SZ-JlNqs",
+      authDomain: "chronos-c7366.firebaseapp.com",
+      databaseURL: "https://chronos-c7366.firebaseio.com",
+      projectId: "chronos-c7366",
+      storageBucket: "chronos-c7366.appspot.com",
+      messagingSenderId: "821932163722",
+      appId: "1:821932163722:web:7531781e1df6f497342373"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
 
   <style>
-    
-/*    Imported fonts*/
-    
+    /*    Imported fonts*/
+
     @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Yeon+Sung&display=swap');
     @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
-    
+
     html,
     body {
       margin: 0;
@@ -65,7 +88,7 @@
       bottom: 10px;
       overflow: hidden;
       border-radius: 25px;
-/*      box-shadow: 10px 10px 10px -6px rgba(132, 29, 179, 0.8);*/
+      /*      box-shadow: 10px 10px 10px -6px rgba(132, 29, 179, 0.8);*/
       box-shadow: 7px 7px 10px -5px black;
       max-width: 400px;
       max-height: 500px;
@@ -95,11 +118,11 @@
       margin: 0;
       padding: 10px;
       width: 100%;
-      height: 70%;
+      height: 75%;
       background-color: white;
       text-align: center;
       /* adds opacity and maxwidth and height*/
-/*      background: rgba(29, 154, 179, 0.5);*/
+      /*      background: rgba(29, 154, 179, 0.5);*/
 
 
 
@@ -120,11 +143,25 @@
       border-bottom-left-radius: 25px;
       border-bottom-right-radius: 25px;
       max-width: 400px;
-      max-height: 300px;
-
-
+      height: 25%;
     }
 
+    #calendarcontainer {
+      margin: 0 auto;
+      text-align: center;
+      height: 30px;
+      margin-bottom: 30px;
+    }
+
+    #mycalendar img {
+      height: 50px;
+      width: 50px;
+
+    }
+    
+    #navbarSupportedContent {
+      font-family: "Cinzel";
+    }
   </style>
 </head>
 
@@ -149,7 +186,7 @@
           <a class="nav-link" href="#">Course View</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Calendar View</a>
+          <a class="nav-link" href="html/testers.html">Calendar View</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Settings</a>
@@ -157,7 +194,7 @@
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="logout">
           <a class="nav-link" href="#">Log-out</a>
         </li>
       </ul>
@@ -166,18 +203,23 @@
 
   <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true" style="margin-left: 3%;">
     <div class="toast-header">
-      <strong class="mr-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
+      <strong class="mr-auto">Welcome,&nbsp;<span id="toastuser"></span></strong>
+      <small>Current Time</small>
       <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="toast-body">
-      Hello, world! This is a toast message.
+      You Have # of Items Due Today!
     </div>
   </div>
 
+  <div id="calendarcontainer">
+    <a id="mycalendar" href="html/testers.html"><img alt="calendar" src="IconPics/calendar.png"></a>
+  </div>
+
   <section>
+
     <div id="imageGallery">
       <!--        added style textalign for centering-->
       <h2 style="text-align: center">BCIT CST Course List</h2>
@@ -233,10 +275,32 @@
   <script>
     $('.toast').toast();
 
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        //        console.log(user.displayName);
+        document.getElementById("toastuser").innerHTML = user.displayName;
+      } else {
+        console.log(user);
+      }
+    });
+
+    
+//    firebase.auth().onAuthStateChanged(function(user) {
+//      $("#logout").click(function(event) {
+//      firebase.auth().signOut(function(user))
+//    })
+//    });
+    
+//     when user clicks log-out
+//    $("#logout").click(function(event) {
+//      
+//      
+//      firebase.auth().signOut(function(user))
+//    });
+    
+    
   </script>
 
 
 
-</body>
-
-</html>
+</body></html>
