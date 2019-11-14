@@ -1,5 +1,5 @@
-const workList = document.querySelector('#work-list');
-const form = document.querySelector('#add-work-form');
+const workList = document.querySelector('#COMP1930-list');
+const form = document.querySelector('#add-1930-form');
 
 // create element & render workList
 function renderWork(doc){
@@ -7,10 +7,17 @@ function renderWork(doc){
     let name = document.createElement('span');
     let dueDate = document.createElement('span');
     let cross = document.createElement('div');
-
+    
+    var stringMonth = doc.data().dueDate +'';
+    var res = stringMonth.split("-"); // turn the date into a list format (Split by / if needed)
+    var months = ["Jan", "Feb", "March", "April", "May", "June", "July", 
+    "August", "September", "October", "November", "December"]; 
+    
+    dueDate.textContent = (months[res[1]-1]);
+    
     li.setAttribute('data-id', doc.id);
     name.textContent = doc.data().name;
-    dueDate.textContent = doc.data().dueDate;
+    
     cross.textContent = 'x';
 
     li.appendChild(name);
@@ -33,7 +40,7 @@ form.addEventListener('submit', (e) => {
     
     e.preventDefault();
     
-    db.collection('work').add({
+    db.collection('COMP1930').add({
         name: form.name.value,
         dueDate: form.dueDate.value,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -53,7 +60,7 @@ document.getElementById("myButton").addEventListener("click",function () {
 
 
 // real-time listener
-db.collection("work").orderBy("createdAt", "desc").onSnapshot(snapshot => {
+db.collection("COMP1930").orderBy("createdAt", "desc").onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
         console.log(change.doc.data());
