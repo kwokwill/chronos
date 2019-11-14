@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+
+        <link rel="stylesheet" href="../css/form.css">
+    </head>
+    <body>
+
+        <h1>COMP 1930 TRIAL RUN</h1>
+
+        <div class="content">
+<!-- adding margin bottom to create separation of form and list -->
+<!-- onsubmit will allow time for js to load into firebase and refresh afterwards for future rendering -->
+            <form id="add-cafe-form" style="margin-bottom: 7%" >
+                <input type="text" name="name" placeholder="Cafe name">
+                <input type="text" name="city" placeholder="Cafe city">
+                <button id="myButton">Add to List!</button>
+            </form>
+
+            <ul id="cafe-list"></ul>
+
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+
+
+
+        <script>
+            // Initialize Firebase
+            var firebaseConfig = {
+                apiKey: "AIzaSyBoltocm_xJbkfN5YmW4mgp_1F65JG36LY",
+                authDomain: "chronos1-3cda9.firebaseapp.com",
+                databaseURL: "https://chronos1-3cda9.firebaseio.com",
+    projectId: "chronos1-3cda9",
+    storageBucket: "chronos1-3cda9.appspot.com",
+    messagingSenderId: "87589827078",
+    appId: "1:87589827078:web:4344da6990f21159f60987",
+    measurementId: "G-YL9SB7ZG40"
+            };
+            // Initialize Firebase
+  
+  
+            firebase.initializeApp(firebaseConfig);
+            
+            const db = firebase.firestore();
+            const settings = {/* your settings... */ timestampsInSnapshots: true};
+            
+
+            db.settings({ timestampsInSnapshots: true }); 
+        </script>
+        <script src="../js/fbtoform.js"></script>
+    </body>
+</html>
