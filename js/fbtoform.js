@@ -48,15 +48,18 @@ form.addEventListener('submit', (e) => {
     });
     form.name.value = '';
     form.dueDate.value = '';
-    
-});
-
-// allowing submission time for add-work-form and then rendering afterwards to bring newest li up top!!!!
-document.getElementById("myButton").addEventListener("click",function () {
     var timeoutID = window.setTimeout(function () {
         location.reload();
-    }, 180);
-  });
+    }, 300);
+    
+});
+//^^^^^^^^^^^^^^^^^^^
+// allowing submission time for add-work-form and then rendering afterwards to bring newest li up top!!!!
+//document.getElementById("myButton").addEventListener("click",function () {
+//    var timeoutID = window.setTimeout(function () {
+//        location.reload();
+//    }, 180);
+//  });
 
 
 // real-time listener
