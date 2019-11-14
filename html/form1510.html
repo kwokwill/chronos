@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+
+        <link rel="stylesheet" href="../css/form.css">
+    </head>
+    <body>
+
+        <h1>COMP 1930 TRIAL RUN</h1>
+
+        <div class="content">
+<!-- adding margin bottom to create separation of form and list -->
+<!-- onsubmit will allow time for js to load into firebase and refresh afterwards for future rendering -->
+            <form id="add-1510-form" style="margin-bottom: 7%" >
+                <input type="text" name="name" placeholder="Assignment">
+                <input type="date" name="dueDate" placeholder="Due date">
+                <button id="myButton">Add to List!</button>
+            </form>
+
+            <ul id="COMP1510-list"></ul>
+
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+
+
+
+        <script>
+            // Initialize Firebase
+            var firebaseConfig = {
+                apiKey: "AIzaSyDxcuP8iqbfPbtYPwAFh04xEc3SZ-JlNqs",
+                authDomain: "chronos-c7366.firebaseapp.com",
+                databaseURL: "https://chronos-c7366.firebaseio.com",
+                projectId: "chronos-c7366",
+                storageBucket: "chronos-c7366.appspot.com",
+                messagingSenderId: "821932163722",
+                appId: "1:821932163722:web:7531781e1df6f497342373"
+            };
+            // Initialize Firebase
+  
+  
+            firebase.initializeApp(firebaseConfig);
+            
+            const db = firebase.firestore();
+            const settings = {/* your settings... */ timestampsInSnapshots: true};
+            
+
+            db.settings({ timestampsInSnapshots: true }); 
+        </script>
+        <script src="../js/fbtoform1510.js"></script>
+    </body>
+</html>

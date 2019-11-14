@@ -53,7 +53,7 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-
+    var db = firebase.firestore();
   </script>
 
 
@@ -104,7 +104,6 @@
       text-align: left;
       float: none;
     }
-
   </style>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -158,7 +157,6 @@
       text-align: left;
       float: none;
     }
-
   </style>
 
 </head>
@@ -197,10 +195,10 @@
   <div class="list-group">
     <a href="#!" class="custom list-group-item list-group-item-action flex-column align-items-start">
       <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
+        <h5 class="mb-1" id="item-1">List group item heading</h5>
         <small>3 days ago</small>
       </div>
-      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+      <p class="mb-1" id="item-1-p">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
       <small>Donec id elit non mi porta.</small>
     </a>
     <a href="#!" class="custom list-group-item list-group-item-action flex-column align-items-start">
@@ -227,7 +225,6 @@
       var jLast = document.getElementById("lname").value;
       alert("Your name is: " + jFirst + " " + jLast);
     }
-
   </script>
 
 
@@ -241,20 +238,23 @@
   </div>
 
   <script>
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        //        console.log(user.displayName);
-        document.getElementsByClassName("mb-1").innerHTML = user.displayName;
-      } else {
-        console.log(user);
-      }
-    });
+    db.collection('comp1100').doc('quiz1').onSnapshot(function(snap) {
+      document.getElementById("item-1").innerHTML = snap.data().title;
+      document.getElementById("item-1-p").innerHTML = snap.data().time;
+      document.getElementById("item-1-p").innerHTML = snap.data().date;
+    })
 
+
+    //    firebase.auth().onAuthStateChanged(function(user) {
+    //      if (user) {
+    //        //        console.log(user.displayName);
+    //        document.getElementById("item-1").innerHTML = db.collection("comp1510").doc("quiz1").get();
+    //      } else {
+    //        console.log(user);
+    //      }
+    //    });
 
     //    db.collection("quotes").doc("777").set({ message: "username" })
-
   </script>
 
-</body>
-
-</html>
+</body></html>
