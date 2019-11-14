@@ -13,7 +13,7 @@ function renderWork(doc){
     var months = ["Jan", "Feb", "March", "April", "May", "June", "July", 
     "August", "September", "October", "November", "December"]; 
     
-    dueDate.textContent = (months[res[1]-1]);
+    dueDate.textContent = (months[res[1]-1] + " " + [res[2]] + ", " + [res[0]]);
     
     li.setAttribute('data-id', doc.id);
     name.textContent = doc.data().name;
@@ -30,7 +30,7 @@ function renderWork(doc){
     cross.addEventListener('click', (e) => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute('data-id');
-        db.collection('work').doc(id).delete();
+        db.collection('COMP1930').doc(id).delete();
     });
 }
 
