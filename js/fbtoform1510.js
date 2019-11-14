@@ -1,5 +1,5 @@
-const workList = document.querySelector('#COMP1930-list');
-const form = document.querySelector('#add-1930-form');
+const workList = document.querySelector('#COMP1510-list');
+const form = document.querySelector('#add-1510-form');
 
 // create element & render workList
 function renderWork(doc){
@@ -13,7 +13,7 @@ function renderWork(doc){
     var months = ["Jan", "Feb", "March", "April", "May", "June", "July", 
     "August", "September", "October", "November", "December"]; 
     
-    dueDate.textContent = (months[res[1]-1] + " " + [res[2]] + ", " + [res[0]]);
+    dueDate.textContent = (months[res[1]-1]);
     
     li.setAttribute('data-id', doc.id);
     name.textContent = doc.data().name;
@@ -30,7 +30,7 @@ function renderWork(doc){
     cross.addEventListener('click', (e) => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute('data-id');
-        db.collection('COMP1930').doc(id).delete();
+        db.collection('work').doc(id).delete();
     });
 }
 
@@ -40,7 +40,7 @@ form.addEventListener('submit', (e) => {
     
     e.preventDefault();
     
-    db.collection('COMP1930').add({
+    db.collection('COMP1510').add({
         name: form.name.value,
         dueDate: form.dueDate.value,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -48,22 +48,19 @@ form.addEventListener('submit', (e) => {
     });
     form.name.value = '';
     form.dueDate.value = '';
-    var timeoutID = window.setTimeout(function () {
-        location.reload();
-    }, 300);
     
 });
-//^^^^^^^^^^^^^^^^^^^
+
 // allowing submission time for add-work-form and then rendering afterwards to bring newest li up top!!!!
-//document.getElementById("myButton").addEventListener("click",function () {
-//    var timeoutID = window.setTimeout(function () {
-//        location.reload();
-//    }, 180);
-//  });
+document.getElementById("myButton").addEventListener("click",function () {
+    var timeoutID = window.setTimeout(function () {
+        location.reload();
+    }, 180);
+  });
 
 
 // real-time listener
-db.collection("COMP1930").orderBy("createdAt", "desc").onSnapshot(snapshot => {
+db.collection("COMP1510").orderBy("createdAt", "desc").onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
         console.log(change.doc.data());
