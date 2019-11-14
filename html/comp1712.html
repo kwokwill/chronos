@@ -138,7 +138,7 @@
     });
 }
     // real-time listener
-db.collection("COMP1930").orderBy("createdAt", "desc").onSnapshot(snapshot => {
+db.collection("COMP1930").orderBy("dueDate", "desc").onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
         console.log(change.doc.data());
