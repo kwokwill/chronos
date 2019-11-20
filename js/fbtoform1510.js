@@ -13,7 +13,7 @@ function renderWork(doc){
     var months = ["Jan", "Feb", "March", "April", "May", "June", "July", 
     "August", "September", "October", "November", "December"]; 
     
-    dueDate.textContent = (months[res[1]-1]);
+    dueDate.textContent = (months[res[1]-1] + " " + [res[2]] + ", " + [res[0]]);
     
     li.setAttribute('data-id', doc.id);
     name.textContent = doc.data().name;

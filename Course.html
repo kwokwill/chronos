@@ -58,9 +58,11 @@
 
     body {
       height: auto;
+/*
       background-image: url(GeometricGradientBackgrounds/BlueTealYellow.jpg);
       background-repeat: round;
       background-size: 100% auto;
+*/
       font-family: 'PT Sans Narrow', sans-serif;
     }
 
@@ -158,7 +160,7 @@
       width: 50px;
 
     }
-    
+
     #navbarSupportedContent {
       font-family: "Cinzel";
     }
@@ -246,8 +248,10 @@
       </div>
       <div class="box">
         <div class="boxInner">
-          <p>COMP1510-Programming Methods</p>
-          <div class="titleBox">Items Due: 3</div>
+          <a class="linkBox" href="html/comp1510.html">
+            <p>COMP1510-Programming Methods</p>
+            <div class="titleBox">Items Due: 3</div>
+          </a>
         </div>
       </div>
       <div class="box">
@@ -284,21 +288,19 @@
       }
     });
 
-    
-//    firebase.auth().onAuthStateChanged(function(user) {
-//      $("#logout").click(function(event) {
-//      firebase.auth().signOut(function(user))
-//    })
-//    });
-    
-//     when user clicks log-out
-//    $("#logout").click(function(event) {
-//      
-//      
-//      firebase.auth().signOut(function(user))
-//    });
-    
-    
+
+    //    firebase.auth().onAuthStateChanged(function(user) {
+    //      $("#logout").click(function(event) {
+    //      firebase.auth().signOut(function(user))
+    //    })
+    //    });
+
+    //     when user clicks log-out
+    //    $("#logout").click(function(event) {
+    //      
+    //      
+    //      firebase.auth().signOut(function(user))
+    //    });
   </script>
 
 
