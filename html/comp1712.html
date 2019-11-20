@@ -123,9 +123,12 @@
       });
     }
     // real-time listener
-    db.collection("COMP1930").orderBy("dueDate", "desc").onSnapshot(snapshot => {
-      let changes = snapshot.docChanges();
-      changes.forEach(change => {
+
+
+db.collection("COMP1930").orderBy("dueDate", "desc").onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+    changes.forEach(change => {
+
         console.log(change.doc.data());
 
         if (change.type == 'added') {
