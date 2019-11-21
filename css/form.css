@@ -1,5 +1,5 @@
 body{
-    background: azure;
+    background: white;
     font-family: ubuntu;
 }
 
@@ -12,12 +12,13 @@ h1{
 }
 
 .content{
-    background: #fff;
+    background: linear-gradient(to right, #1e5799 0%,#2989d8 86%);;
     max-width: 960px;
     margin: 30px auto;
-    padding:  20px 30px;
-    border-radius: 10px 120px 10px 10px;
-    box-shadow: 1px 3px 5px rgba(0,0,0,0.1)
+    padding: 20px 30px;
+    border-radius: 10px;
+    height: 100%;
+    border: 1px solid black;
 }
 
 ul{
@@ -28,17 +29,22 @@ ul{
 li{
     padding: auto;
     min-height: 100px;
-    background: #f6f6f6;
+    background: lightblue;
     font-size: 45px;
-    color: #555;
+    color: black;
+    margin-top: 3px;
+    border-radius: 10px;;
     position: relative;
-    border-bottom: 1px solid #e6e6e6;
-    height: 46px;
+    border: black solid 1px;
+    height: auto;
 }
 
 li:nth-child(even){
     padding: auto;
-    background: hsl(0, 18%, 90%);
+    background: rgb(134, 186, 204);
+}
+li span:nth-child(2){
+    font-size: 25pt;
 }
 /* change to inline block if u want side by side 
     otherwise change to block for up down formation */
@@ -48,7 +54,7 @@ li span{
     
 }
 /* css on the detail section within the ul div */
-li span:nth-child(2){
+li span:nth-child(3){
     font-size: 40px;
     margin-top: 6px;
     color: rgb(71, 71, 71);
@@ -59,7 +65,9 @@ li div{
     position: absolute;
     top: 0;
     right: 0px;
-    background: rgba(255,255,255,0.6);
+    background: rgba(255,2,2,0.6);
+    border-radius: 10px;
+    border: black solid 1px;
     width: 40px;
     text-align: center;
     padding: 10px 0;
@@ -71,19 +79,30 @@ form input{
     float: left;
     width: 35%;
     margin: 0;
-    border: 0;
-    border-bottom: 3px solid #d4a6a6;
+    height: 70px;
+    border: 3px solid black;
     margin: 0 1%;
+    background-color: lightgrey;
     padding: 10px;
     display: block;
     box-sizing: border-box;
     font-size: 30px;
 }
-
+form textarea{
+    float: left;
+    width: 72%;
+    margin-top: 10px;
+    margin-left: 10px;;
+    height: 170px;
+    border: 3px solid black;
+    background-color: lightgrey;
+    padding: 10px;
+    display: block;
+    box-sizing: border-box;
+    font-size: 30px;
+}
 form input:focus{
     outline: none;
-    border-bottom: 3px solid #88236f;
-    padding-bottom: 8px;
     transition: all ease 0.2s;
 }
 
@@ -100,7 +119,8 @@ button{
     border-radius: 10px;
     padding: 13px;
     width: 22%;
-    box-shadow: -1px 0px 1px rgba(0,0,0,0.1);
+    border: #555 solid 1px;
+    box-shadow: 3px 4px 3px rgba(32, 24, 150, 1);
     font-weight: bold;
     font-family: ubuntu;
     letter-spacing: 1px;
