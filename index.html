@@ -1,123 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <title>Chronos</title>
-  <meta charset="utf-8">
-  <!-- Bootstrap for Mobile-first -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <!-- Firebase related things -->
-
-  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
-
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
-
-
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyDxcuP8iqbfPbtYPwAFh04xEc3SZ-JlNqs",
-      authDomain: "chronos-c7366.firebaseapp.com",
-      databaseURL: "https://chronos-c7366.firebaseio.com",
-      projectId: "chronos-c7366",
-      storageBucket: "chronos-c7366.appspot.com",
-      messagingSenderId: "821932163722",
-      appId: "1:821932163722:web:7531781e1df6f497342373"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script>
-  <style>
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      margin: -30px 0 0 0;
-      padding: 0;
-    }
-
-    #imageBg {
-      background: linear-gradient(44deg, rgba(243, 243, 243, 0.05) 0%, rgba(243, 243, 243, 0.05) 33.333%, rgba(79, 79, 79, 0.05) 33.333%, rgba(79, 79, 79, 0.05) 66.666%, rgba(9, 9, 9, 0.05) 66.666%, rgba(9, 9, 9, 0.05) 99.999%), linear-gradient(97deg, rgba(150, 150, 150, 0.05) 0%, rgba(150, 150, 150, 0.05) 33.333%, rgba(34, 34, 34, 0.05) 33.333%, rgba(34, 34, 34, 0.05) 66.666%, rgba(40, 40, 40, 0.05) 66.666%, rgba(40, 40, 40, 0.05) 99.999%), linear-gradient(29deg, rgba(56, 56, 56, 0.05) 0%, rgba(56, 56, 56, 0.05) 33.333%, rgba(226, 226, 226, 0.05) 33.333%, rgba(226, 226, 226, 0.05) 66.666%, rgba(221, 221, 221, 0.05) 66.666%, rgba(221, 221, 221, 0.05) 99.999%), linear-gradient(90deg, rgb(163, 238, 211), rgb(149, 75, 252));
-      background-size: cover;
-      background-repeat: repeat;
-      height: 100%;
-      width: 100%;
-
-
-    }
-
-    .signIn {
-      padding-top: 50px;
-
-    }
-
-    #lol {
-      border-top: 1px solid azure;
-      width: 100%;
-      background: linear-gradient(44deg, rgba(243, 243, 243, 0.05) 0%, rgba(243, 243, 243, 0.05) 33.333%, rgba(79, 79, 79, 0.05) 33.333%, rgba(79, 79, 79, 0.05) 66.666%, rgba(9, 9, 9, 0.05) 66.666%, rgba(9, 9, 9, 0.05) 99.999%), linear-gradient(97deg, rgba(150, 150, 150, 0.05) 0%, rgba(150, 150, 150, 0.05) 33.333%, rgba(34, 34, 34, 0.05) 33.333%, rgba(34, 34, 34, 0.05) 66.666%, rgba(40, 40, 40, 0.05) 66.666%, rgba(40, 40, 40, 0.05) 99.999%), linear-gradient(29deg, rgba(56, 56, 56, 0.05) 0%, rgba(56, 56, 56, 0.05) 33.333%, rgba(226, 226, 226, 0.05) 33.333%, rgba(226, 226, 226, 0.05) 66.666%, rgba(221, 221, 221, 0.05) 66.666%, rgba(221, 221, 221, 0.05) 99.999%), linear-gradient(90deg, rgb(163, 238, 211), rgb(149, 75, 252));
-      height: 8%;
-
-    }
-  </style>
+    <title>Chronos</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Adam, Charlie, William">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/index.css"/>
 </head>
+
+
 
 <body>
 
-  <div id="imageBg">
-    <h1 id="naming"> Chronos</h1>
-    <div class="signIn" id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+                href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="#home" class="w3-bar-item w3-button">HOME</a>
+            <a href="#team" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> TEAM</a>
+            <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> ABOUT</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+        </div>
 
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <a href="login.html" class="w3-bar-item w3-button" onclick="toggleFunction()">LOGIN</a>
+            <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+            <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">TEAM</a>
+            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- First Parallax Image with Logo Text -->
+    <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+        <div class="w3-display-middle">
+            <span id="title">Chronos </span>
+
+            <a href="login.html" style="text-decoration: none"><button id="start" type="button">Get Started</button></a>
+        </div>
+        <div id="learn"> <a href="#about"> Learn More </a></div>
+    </div>
+
+    <!-- Container (About Section) -->
+    <div id="about" class="backDiv">
+        <h3 class="chronosHead"><br>What is Chronos</h3>
+        <img id="chronos1" class="d-flex ml-3" src="bgPics/booking.png" alt="Generic placeholder image">
+        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</p>
+        <h3 class="chronosHead"> Focus On Big Ideas </h3>
+        <img id="focus" src="bgPics/focus.png" alt="Focus Picture">
+        <h3 class="chronosHead"> See Your Progress </h3>
+        <img id="progress" src="bgPics/progress.png" />
+        <div class="factNote"> z</div>
+        <h3 class="chronosHead"> Be On the Go </h3>
+        <img id="onTheGo" src="bgPics/onTheGo.png" />
+        <div> See your schedule on all your devices<br> Anytime, Anywhere</div>
+    </div>
 
     <script>
-      // Initialize the FirebaseUI Widget using Firebase.
-      var ui = new firebaseui.auth.AuthUI(firebase.auth());
-      var uiConfig = {
-        callbacks: {
-          signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-            // User successfully signed in.
-            // Return type determines whether we continue the redirect automatically
-            // or whether we leave that to developer to handle.
-            return true;
-          },
-          uiShown: function() {
-            // The widget is rendered.
-            // Hide the loader.
-            document.getElementById('loader').style.display = 'none';
-          }
-        },
-        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-        signInFlow: 'popup',
-        signInSuccessUrl: 'Course.html',
-        signInOptions: [
-          // Leave the lines as is for the providers you want to offer your users.
-          // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-          // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-          // firebase.auth.GithubAuthProvider.PROVIDER_ID,
-          firebase.auth.EmailAuthProvider.PROVIDER_ID,
-          // firebase.auth.PhoneAuthProvider.PROVIDER_ID
-        ],
-        // Terms of service url.
-        tosUrl: '#',
-        // Privacy policy url.
-        privacyPolicyUrl: '#'
-      };
-      // The start method will wait until the DOM is loaded.
-      ui.start('#firebaseui-auth-container', uiConfig);
+
+
+        // Change style of navbar on scroll
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+            }
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
     </script>
 
-  </div>
-  <footer id="lol"> CopyRight</footer>
-</body></html>
+</body>
+
+
+
+
+
+</html>

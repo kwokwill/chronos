@@ -85,18 +85,19 @@
         .event-cancelled {
           display: inline;
           padding: 0 10px;
-          font-size: 50px;
           overflow-wrap: break-word;
         }
 
         .event-count {
-          color: #52A0FD;
+          font-size: 45px;    
           text-align: right;
         }
         
         .event-name {
+          font-size: 50px;
           padding-right: 0;
           text-align: left;
+          color: #52A0FD;
         }
         .event-cancelled {
             color: #FF1744;
@@ -402,7 +403,8 @@
   }
     #homepagetitle {
         font-size: 55px;
-        font-family: Cinzel
+        font-family: Cinzel;
+        padding-left: 25px;
     }
     
     .navbar-toggler-icon {
@@ -412,7 +414,7 @@
     }
 
     #navbarStyle {
-        font-size: 50px;
+        font-size: 45px;
     }
 
     /* touching up on the links inside the nav bar */
@@ -484,6 +486,7 @@
       margin: 15px auto;
       min-height: 45px;
       padding: 20px 0 20px 0;
+      width: 75%;
 
     }
 
@@ -953,7 +956,7 @@
             console.log(n + " Number Input: " + desc);
             var event_card = $("<div class='event-card'></div>");
             var event_name = $("<div class='event-name'>" + n + ":</div>");
-            var event_info = $("<div class='event-count'>" + desc + " Invited</div>");
+            var event_info = $("<div class='event-count'>" + desc + "</div>");
           $(event_card).append(event_name).append(event_info);
           $(".events-container").append(event_card);
           })
