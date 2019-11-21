@@ -58,7 +58,7 @@
 
     body {
       height: auto;
-/*
+      /*
       background-image: url(GeometricGradientBackgrounds/BlueTealYellow.jpg);
       background-repeat: round;
       background-size: 100% auto;
@@ -120,9 +120,13 @@
       margin: 0;
       padding: 10px;
       width: 100%;
-      height: 75%;
-      background-color: white;
+      height: 100%;
+      /*      background-color: rgba(130, 10, 228, 0.57);*/
+      font-size: 20pt;
+      padding-top: 30px;
       text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #b7deed 0%, #71ceef 70%, #21b4e2 96%, #b7deed 100%);
       /* adds opacity and maxwidth and height*/
       /*      background: rgba(29, 154, 179, 0.5);*/
 
@@ -152,7 +156,11 @@
       margin: 0 auto;
       text-align: center;
       height: 30px;
-      margin-bottom: 30px;
+      margin-bottom: 50px;
+    }
+
+    #calendarcontainer p {
+      margin: 0 auto;
     }
 
     #mycalendar img {
@@ -164,6 +172,10 @@
     #navbarSupportedContent {
       font-family: "Cinzel";
     }
+
+    .navbar {
+      background-color: rgba(29, 120, 179, 0.6);
+    }
   </style>
 </head>
 
@@ -171,7 +183,7 @@
 
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="#"><span id="homepagetitle">Chronos</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -217,7 +229,8 @@
   </div>
 
   <div id="calendarcontainer">
-    <a id="mycalendar" href="html/testers.html"><img alt="calendar" src="IconPics/calendar.png"></a>
+    <p>Calendar View</p>
+    <a id="mycalendar" href="html/calendar.html"><img alt="calendar" src="IconPics/calendar.png"></a>
   </div>
 
   <section>
@@ -229,47 +242,48 @@
       <div class="box">
         <div class="boxInner">
           <a class="linkBox" href="html/comp1100.html">
-            <p>COMP1100-Program Fundamentals</p>
-            <div class="titleBox">Items Due: 3</div>
+            <p>COMP<br />1100</p>
+            <!--            <div class="titleBox">Items Due: 3</div>-->
           </a>
         </div>
       </div>
       <div class="box">
         <div class="boxInner">
-          <p>COMM1116-Business Communications</p>
-          <div class="titleBox">Items Due: 3</div>
+          <p>COMM<br />1116</p>
+          <!--          <div class="titleBox">Items Due: 3</div>-->
         </div>
       </div>
       <div class="box">
         <div class="boxInner">
-          <p>COMP1113-Applied Mathematics</p>
-          <div class="titleBox">Items Due: 3</div>
+          <p>COMP<br />1113</p>
+          <!--          <div class="titleBox">Items Due: 3</div>-->
         </div>
       </div>
       <div class="box">
         <div class="boxInner">
           <a class="linkBox" href="html/comp1510.html">
-            <p>COMP1510-Programming Methods</p>
-            <div class="titleBox">Items Due: 3</div>
+            <p>COMP<br />1510</p>
+            <!--            <div class="titleBox">Items Due: 3</div>-->
           </a>
         </div>
       </div>
       <div class="box">
         <div class="boxInner">
-          <p>COMM1536-Web Development</p>
-          <div class="titleBox">Items Due: 3</div>
+          <p>COMM<br />1536</p>
+          <!--          <div class="titleBox">Items Due: 3</div>-->
         </div>
       </div>
       <div class="box">
         <div class="boxInner">
-          <p>COMP1712-Business Analysis</p>
-          <div class="titleBox">Items Due: 3</div>
+          <a class="linkBox" href="html/comp1712.html">
+          <p>COMP<br />1712</p>
+          <!--          <div class="titleBox">Items Due: 3</div>-->
         </div>
       </div>
       <div class="box">
         <div class="boxInner">
-          <p>COMP1930-Projects</p>
-          <div class="titleBox">Items Due: 3</div>
+          <p>COMP<br />1930</p>
+          <!--          <div class="titleBox">Items Due: 3</div>-->
         </div>
       </div>
 

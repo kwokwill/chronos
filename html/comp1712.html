@@ -17,13 +17,31 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+  <style>
+    .list-group {
+
+    }
+    .list-group-item {
+      background: linear-gradient(135deg, #b7deed 0%, #71ceef 70%, #21b4e2 96%, #b7deed 100%);
+      border-style: solid;
+      height: 100%;
+      margin: 10px;
+      width: 95%;
+
+    }
+    
+    .navbar {
+      background-color: rgba(29, 120, 179, 0.6);
+    }
+  </style>
+
   <!-- Optional styles and scripts of your own -->
   <!-- <link rel="stylesheet" href="styles/style.css">-->
   <!-- <script src="scripts/script.js"></script>-->
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="#">Chronos</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -52,7 +70,7 @@
       </ul>
     </div>
   </nav>
-  
+
   <div id="titleBar" style="text-align: center"> COMP 1712 </div>
   <div class="list-group">
     <ul id="COMP1930-list"></ul>
@@ -84,7 +102,6 @@
     db.settings({
       timestampsInSnapshots: true
     });
-
   </script>
   <script>
     const workList = document.querySelector('.list-group');
@@ -125,9 +142,9 @@
     // real-time listener
 
 
-db.collection("COMP1930").orderBy("dueDate", "desc").onSnapshot(snapshot => {
-    let changes = snapshot.docChanges();
-    changes.forEach(change => {
+    db.collection("COMP1930").orderBy("dueDate", "desc").onSnapshot(snapshot => {
+      let changes = snapshot.docChanges();
+      changes.forEach(change => {
 
         console.log(change.doc.data());
 
@@ -141,9 +158,6 @@ db.collection("COMP1930").orderBy("dueDate", "desc").onSnapshot(snapshot => {
       });
 
     });
-
   </script>
 
-</body>
-
-</html>
+</body></html>
