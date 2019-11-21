@@ -22,12 +22,8 @@
 
     }
     .list-group-item {
-      background: linear-gradient(135deg, #b7deed 0%, #71ceef 70%, #21b4e2 96%, #b7deed 100%);
+      background: linear-gradient(to left, #1e5799 0%,#2989d8 86%);
       border-style: solid;
-      height: 100%;
-      margin: 10px;
-      width: 95%;
-
     }
     
     .navbar {
@@ -46,7 +42,6 @@
       margin-left: 10px;
       margin-bottom: 5px;
       border-radius: 5px;
-      background-color: lightblue;
       border: solid black 1px;
     }
   </style>
@@ -83,7 +78,7 @@
     </div>
   </nav>
 
-  <div id="titleBar" style="text-align: center"> COMP 1712 </div>
+  <div id="titleBar" style="text-align: center"> COMP 1510 </div>
   <div class="list-group">
     <ul id="COMP1930-list"></ul>
   </div>
@@ -146,13 +141,13 @@
       cross.addEventListener('click', (e) => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute('data-id');
-        db.collection('COMP1930').doc(id).delete();
+        db.collection('COMP1510').doc(id).delete();
       });
     }
     // real-time listener
 
 
-    db.collection("COMP1930").orderBy("dueDate", "desc").onSnapshot(snapshot => {
+    db.collection("COMP1510").orderBy("dueDate", "desc").onSnapshot(snapshot => {
       let changes = snapshot.docChanges();
       changes.forEach(change => {
 
