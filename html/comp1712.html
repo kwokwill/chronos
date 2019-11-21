@@ -20,6 +20,18 @@
   <!-- Optional styles and scripts of your own -->
   <!-- <link rel="stylesheet" href="styles/style.css">-->
   <!-- <script src="scripts/script.js"></script>-->
+  <style>
+    .testing {
+      width: 92%;
+      height: 100px;
+      align-content: center;
+      margin-left: 10px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      background-color: lightblue;
+      border: solid black 1px;
+    }
+  </style>
 </head>
 
 <body>
@@ -91,7 +103,7 @@
 
     function renderWork(doc) {
       let li = document.createElement('a');
-      li.classList.add("list-group-item", "list-group-item-action", "flex-column", "align-items-start");
+      li.classList.add("testing", "list-group-item", "list-group-item-action", "flex-column", "align-items-start");
       let name = document.createElement('div');
       let dueDate = document.createElement('p');
       let cross = document.createElement('div');
@@ -106,8 +118,6 @@
 
       li.setAttribute('data-id', doc.id);
       name.textContent = doc.data().name;
-
-      cross.textContent = 'x';
 
       li.appendChild(name);
       li.appendChild(dueDate);
