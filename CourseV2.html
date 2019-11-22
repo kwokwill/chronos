@@ -33,6 +33,7 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+
   </script>
 
   <style>
@@ -47,7 +48,7 @@
     body {
       margin: 0;
       padding: 0;
-      height: 100%;
+      height: 1000px;
       font-family: 'PT Sans Narrow', sans-serif;
     }
 
@@ -61,23 +62,36 @@
 
     .navbar {
       box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .45);
+      background-color: rgba(136, 210, 210, 0.12);
     }
 
     #bannercontainer {
-      background-image: url(IconPics/videoblocks-cartoon-workplace-modern-colorful-office-flat-animation-4k_bfgh8v7vdz_thumbnail-full09.png);
+      /*      background-image: url(IconPics/videoblocks-cartoon-workplace-modern-colorful-office-flat-animation-4k_bfgh8v7vdz_thumbnail-full09.png);*/
+      background-color: #8ac9cb;
       background-size: 100% auto;
+      min-height: 220px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .35);
       display: flex;
       justify-content: center;
-      align-items: top;
+      flex-direction: column;
+      align-content: center;
+    }
+
+    #bannerimage {
       height: 220px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .45);
+      width: 375px;
+      margin: 0 auto;
     }
 
     #bannercontainer h1 {
       margin-top: 10px;
+      margin-bottom: -50px;
       font-size: 25pt;
       font-weight: 600;
+      text-align: center;
+      z-index: 1;
+      position:relative;
     }
 
     #mycalendar img {
@@ -109,13 +123,14 @@
       width: 100%;
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
-      background-color: rgba(136, 210, 210, 0.7);
+      background-color: rgba(136, 210, 210, 0.9);
     }
 
     .coursecontainer h2 {
       font-size: 20pt;
       text-align: center;
-      padding-top: 15%;
+      padding-top: 10px;
+      font-weight: 600;
     }
 
     .coursecontainer1 h2 {
@@ -125,8 +140,8 @@
     }
 
     #maincontainer {
-      background-color: rgba(136, 210, 210, 0.2);
-      height: 900px;
+      background-color: rgba(136, 210, 210, 0.30);
+      height: 100%;
     }
 
     #calendarcontainer {
@@ -141,7 +156,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .35);
+      box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .45);
       height: 10%;
       border-radius: 5px;
       width: 35%;
@@ -161,7 +176,18 @@
       width: 20%;
       margin: 0;
       margin-top: -5px;
+      margin-bottom: 5px;
     }
+
+    /*
+    @media screen and (min-width: 400px)
+    {
+      #bannercontainer {
+        min-height: 250px;
+      }
+    }
+*/
+
   </style>
 
 </head>
@@ -203,11 +229,7 @@
   <div id="maincontainer">
     <div id="bannercontainer">
       <h1>My Courses</h1>
-      <!--
-      <div id="calendarcontainer">
-        <a id="mycalendar" href="html/calendar.html"><img alt="calendar" src="IconPics/calendar.png"></a>
-      </div>
--->
+      <img id="bannerimage" alt="coursebanner" src="IconPics/videoblocks-cartoon-workplace-modern-colorful-office-flat-animation-4k_bfgh8v7vdz_thumbnail-full09.png" />
     </div>
 
     <div id="calendarcontainer">
@@ -221,44 +243,44 @@
     <div class="container">
       <div class="coursecontainer" id="comp1510">
         <div class="coursebar"></div>
-        <h2>COMP 1510</h2>
+        <h2>COMP<br/>1510</h2>
       </div>
       <div class="coursecontainer" id="comp1536">
         <div class="coursebar"></div>
-        <h2>COMP 1536</h2>
+        <h2>COMP<br/>1536</h2>
       </div>
     </div>
 
     <div class="container">
       <div class="coursecontainer" id="comp1930">
         <div class="coursebar"></div>
-        <h2>COMP 1930</h2>
+        <h2>COMP<br/>1930</h2>
       </div>
       <div class="coursecontainer" id="comp1712">
         <div class="coursebar"></div>
-        <h2>COMP 1712</h2>
+        <h2>COMP<br/>1712</h2>
       </div>
     </div>
 
     <div class="container">
       <div class="coursecontainer" id="comp1113">
         <div class="coursebar"></div>
-        <h2>COMP 1113</h2>
+        <h2>COMP<br/>1113</h2>
       </div>
       <div class="coursecontainer" id="comp1100">
         <div class="coursebar"></div>
-        <h2>COMP 1100</h2>
+        <h2>COMP<br/>1100</h2>
       </div>
     </div>
 
     <div class="container">
       <div class="coursecontainer" id="comm1116">
         <div class="coursebar"></div>
-        <h2>COMM 1116</h2>
+        <h2>COMM<br/>1116</h2>
       </div>
       <div class="coursecontainer" id="personal">
         <div class="coursebar"></div>
-        <h2>My Dates</h2>
+        <h2>My<br/>Dates</h2>
       </div>
     </div>
   </div>
@@ -274,5 +296,8 @@
         console.log(user);
       }
     });
+
   </script>
-</body></html>
+</body>
+
+</html>
