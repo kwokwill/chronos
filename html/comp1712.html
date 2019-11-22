@@ -18,43 +18,113 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
   <style>
-    .list-group {
+    @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Yeon+Sung&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
 
+    html {
+      margin: 0;
     }
-    .list-group-item {
-      background: linear-gradient(135deg, #b7deed 0%, #71ceef 70%, #21b4e2 96%, #b7deed 100%);
-      border-style: solid;
-      height: 100%;
-      margin: 10px;
-      width: 95%;
 
+    body {
+      margin: 0;
+      padding: 0;
+      height: 1000px;
+      font-family: 'PT Sans Narrow', sans-serif;
     }
-    
+
     .navbar {
-      background-color: rgba(29, 120, 179, 0.6);
+      box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .45);
+      background-color: rgba(136, 210, 210, 0.12);
     }
-  </style>
 
-  <!-- Optional styles and scripts of your own -->
-  <!-- <link rel="stylesheet" href="styles/style.css">-->
-  <!-- <script src="scripts/script.js"></script>-->
-  <style>
+    #homepagetitle {
+      font-family: 'Cinzel';
+      font-size: 25pt;
+      margin: 0 auto;
+      padding: 0;
+      font-weight: 600;
+    }
+
+    #maincontainer {
+      background-color: rgba(136, 210, 210, 0.30);
+      height: 100%;
+    }
+
+    #bannercontainer {
+      /*      background-image: url(IconPics/videoblocks-cartoon-workplace-modern-colorful-office-flat-animation-4k_bfgh8v7vdz_thumbnail-full09.png);*/
+      background-color: #8ac9cb;
+      background-size: 100% auto;
+      min-height: 220px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .35);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-content: center;
+    }
+
+    .bannerimage {
+      height: 220px;
+      width: 375px;
+      margin: 0 auto;
+    }
+
+    #bannercontainer h1 {
+      margin-top: 10px;
+      margin-bottom: -50px;
+      font-size: 25pt;
+      font-weight: 600;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+    }
+
+    #bannerpicturecontainer {
+      display: flex;
+      justify-content: center;
+      align-content: flex-end;
+/*
+      margin-top: 10px;
+      margin-bottom: -10px;
+*/
+      border-style: solid;
+      border-width: 8px;
+      border-color: white;
+    }
+
     .testing {
-      width: 92%;
+      width: 100%;
       height: 100px;
       align-content: center;
-      margin-left: 10px;
+      margin-left: 0 auto;
       margin-bottom: 5px;
       border-radius: 5px;
       background-color: lightblue;
       border: solid black 1px;
     }
+
+    .list-group {
+      margin-top: -20px;
+    }
+
+    .list-group-item {
+      background-color: rgba(136, 210, 210, 0.30);
+      border-style: solid;
+      border-color: white;
+      border-width: 3px;
+      height: 100%;
+      width: 95%;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      box-shadow: 0 3px 7px 0px rgba(0, 0, 0, .35);
+    }
+
   </style>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#">Chronos</a>
+    <a class="navbar-brand" href="#"><span id="homepagetitle">COMP 1712</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -83,10 +153,24 @@
     </div>
   </nav>
 
-  <div id="titleBar" style="text-align: center"> COMP 1712 </div>
-  <div class="list-group">
-    <ul id="COMP1930-list"></ul>
+  <div id="maincontainer">
+    <div id="bannercontainer">
+      <h1>Business Analysis</h1>
+      <div id="bannerpicturecontainer">
+        <img class="bannerimage" alt="coursebanner" src="../IconPics/imageedit_8_4666430084.gif">
+        <!--        <img class="bannerimage" alt="coursebanner" src="../IconPics/imageedit_4_3085042849.gif">-->
+      </div>
+    </div>
+
+    <div class="list-group">
+      <ul id="COMP1930-list"></ul>
+    </div>
   </div>
+
+
+
+
+
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
   <script>
     // Initialize Firebase
@@ -114,6 +198,7 @@
     db.settings({
       timestampsInSnapshots: true
     });
+
   </script>
   <script>
     const workList = document.querySelector('.list-group');
@@ -168,6 +253,9 @@
       });
 
     });
+
   </script>
 
-</body></html>
+</body>
+
+</html>
