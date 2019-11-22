@@ -20,7 +20,6 @@ h1{
     height: 100%;
     border: 1px solid black;
 }
-
 ul{
     list-style-type: none;
     padding: 0;
@@ -74,7 +73,13 @@ li div{
     font-weight:  bold;
     cursor:  pointer;
 }
-
+form select {
+    padding: 20px;
+    margin-left: 11px;
+    margin-bottom: 10px;
+    font-size: 20pt;
+    display: inline-block;
+}
 form input{
     float: left;
     width: 35%;
@@ -123,6 +128,8 @@ button{
     box-shadow: 3px 4px 3px rgba(32, 24, 150, 1);
     font-weight: bold;
     font-family: ubuntu;
+    margin-left: 20px;
+    margin-top: 115px;
     letter-spacing: 1px;
     color: rgb(7, 7, 7);
     font-size: 30px;

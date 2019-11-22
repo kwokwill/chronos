@@ -8,8 +8,8 @@ function renderWork(doc){
     let dueDate = document.createElement('span');
     let description = document.createElement('span');
     let cross = document.createElement('div');
-    
     var stringMonth = doc.data().dueDate +'';
+    
     var res = stringMonth.split("-"); // turn the date into a list format (Split by / if needed)
     var months = ["Jan", "Feb", "March", "April", "May", "June", "July", 
     "August", "September", "October", "November", "December"]; 
@@ -20,7 +20,6 @@ function renderWork(doc){
     name.textContent = doc.data().name;
     description.textContent = doc.data().description;
     cross.textContent = 'x';
-
     li.appendChild(name);
     li.appendChild(description);
     li.appendChild(dueDate);
@@ -39,10 +38,11 @@ function renderWork(doc){
 // saving data and adding timestamp to allow work to be ordered
 // data saved and is submitted with name/city/createdAt (what time)
 form.addEventListener('submit', (e) => {
-    
+    var cs = document.getElementById("wow")
+    var strUser = cs.options[cs.selectedIndex].value;    
     e.preventDefault();
-    
-    db.collection('COMP1116').add({
+    console.log(strUser);
+    db.collection(strUser).add({
         name: form.name.value,
         dueDate: form.dueDate.value,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -53,8 +53,8 @@ form.addEventListener('submit', (e) => {
     form.dueDate.value = '';
     form.description.value = '';
     var timeoutID = window.setTimeout(function () {
-        location.reload();
-    }, 300);
+        // location.reload();
+    }, 1500);
     
 });
 //^^^^^^^^^^^^^^^^^^^

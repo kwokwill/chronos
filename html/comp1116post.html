@@ -14,9 +14,20 @@
 <!-- adding margin bottom to create separation of form and list -->
 <!-- onsubmit will allow time for js to load into firebase and refresh afterwards for future rendering -->
             <form id="add-1116-form" style="margin-bottom: 7%" >
+                <p>Which course do you want to add an assignement to?</p>
+                <select name="courseSelect" id="wow">
+                    <option value="COMP1100">COMP1100</option>
+                    <option value="COMP1113">COMP1113</option>
+                    <option value="COMP1116">COMP1116</option>
+                    <option value="COMP1510">COMP1510</option>
+                    <option value="COMP1536">COMP1536</option>
+                    <option value="COMP1712">COMP1712</option>
+                    <option value="COMP1930">COMP1930</option>
+                </select>
+                <br>
                 <input type="text" name="name" placeholder="Name of Assignment">
                 <input type="date" name="dueDate" required="required" placeholder="Due date">
-                <textarea rows="4" cols="50" name="description" placeholder="Description"></textarea>>
+                <textarea rows="4" cols="50" name="description" placeholder="Description"></textarea>
                 <button id="myButton">Add to List!</button>
             </form>
 
