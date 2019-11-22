@@ -145,9 +145,12 @@
     }
 
     #calendarcontainer {
+/*
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+*/
       margin-bottom: 25px;
     }
 
@@ -156,6 +159,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin: 0 auto;
       box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .35);
       height: 10%;
       border-radius: 5px;
@@ -170,11 +174,12 @@
     #calendarinnercontainer h2 {
       font-size: 15pt;
       font-weight: 600;
+      text-align: center;
     }
 
     #calendarimg {
+      display: block;
       width: 20%;
-      margin: 0;
       margin-top: -5px;
       margin-bottom: 5px;
     }
@@ -230,11 +235,15 @@
     </div>
 
     <div id="calendarcontainer">
-      <div id="calendarinnercontainer">
-        <a href="html/calendar.html"><div id="calendarbar"></div>
+      
+      <div id="calendarinnercontainer" >
+        <a href="html/calendar.html">
+        <div id="calendarbar"></div>
         <h2>My Calendar</h2>
-          <img id="calendarimg" alt="calendar" src="IconPics/calendar.png"></a>
+          </a>
+        <img id="calendarimg" alt="calendar" src="IconPics/calendar.png">
       </div>
+        
     </div>
 
     <div class="container">
@@ -253,10 +262,14 @@
         <div class="coursebar"></div>
         <h2>COMP<br/>1930</h2>
       </div>
+      
       <div class="coursecontainer" id="comp1712">
+        <a href="html/comp1712.html">
         <div class="coursebar"></div>
         <h2>COMP<br/>1712</h2>
+          </a>
       </div>
+        
     </div>
 
     <div class="container">
