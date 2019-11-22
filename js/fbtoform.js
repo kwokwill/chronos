@@ -8,11 +8,13 @@ function renderWork(doc){
     let dueDate = document.createElement('span');
     let cross = document.createElement('div');
     
+    // having the input date split into year month and date
     var stringMonth = doc.data().dueDate +'';
     var res = stringMonth.split("-"); // turn the date into a list format (Split by / if needed)
     var months = ["Jan", "Feb", "March", "April", "May", "June", "July", 
     "August", "September", "October", "November", "December"]; 
     
+    // dueDate is asking for the month's array and converting it to a word along with integer String
     dueDate.textContent = (months[res[1]-1] + " " + [res[2]] + ", " + [res[0]]);
     
     li.setAttribute('data-id', doc.id);

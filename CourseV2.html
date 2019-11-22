@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Chronos</title>
+  <meta name="Chronos Due-Date Tracker" content="HomePage">
+  <meta name="Group16" content="HomePage">
+
+  <!-- Bootstrap for Mobile-first -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDxcuP8iqbfPbtYPwAFh04xEc3SZ-JlNqs",
+      authDomain: "chronos-c7366.firebaseapp.com",
+      databaseURL: "https://chronos-c7366.firebaseio.com",
+      projectId: "chronos-c7366",
+      storageBucket: "chronos-c7366.appspot.com",
+      messagingSenderId: "821932163722",
+      appId: "1:821932163722:web:7531781e1df6f497342373"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+  </script>
+
+  <style>
+    /*    Imported fonts*/
+    @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Yeon+Sung&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+
+    html {
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 1000px;
+      font-family: 'PT Sans Narrow', sans-serif;
+    }
+
+    #homepagetitle {
+      font-family: 'Cinzel';
+      font-size: 25pt;
+      margin: 0 auto;
+      padding: 0;
+      font-weight: 600;
+    }
+
+    .navbar {
+      box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .45);
+      background-color: rgba(136, 210, 210, 0.12);
+    }
+
+    #bannercontainer {
+      /*      background-image: url(IconPics/videoblocks-cartoon-workplace-modern-colorful-office-flat-animation-4k_bfgh8v7vdz_thumbnail-full09.png);*/
+      background-color: #8ac9cb;
+      background-size: 100% auto;
+      min-height: 220px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .35);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-content: center;
+    }
+
+    #bannerimage {
+      height: 220px;
+      width: 375px;
+      margin: 0 auto;
+    }
+
+    #bannercontainer h1 {
+      margin-top: 10px;
+      margin-bottom: -50px;
+      font-size: 25pt;
+      font-weight: 600;
+      text-align: center;
+      z-index: 1;
+      position:relative;
+    }
+
+    #mycalendar img {
+      height: 50px;
+      width: 50px;
+
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .coursecontainer {
+      box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .35);
+      height: 120px;
+      border-radius: 20px;
+      width: 40%;
+      background-color: rgba(136, 210, 210, 0.1);
+      border-style: solid;
+      border-color: rgba(136, 210, 210, 1);
+      border-width: 2px;
+    }
+
+    .coursebar {
+      height: 25%;
+      width: 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      background-color: rgba(136, 210, 210, 0.9);
+    }
+
+    .coursecontainer h2 {
+      font-size: 20pt;
+      text-align: center;
+      padding-top: 10px;
+      font-weight: 600;
+    }
+
+    .coursecontainer1 h2 {
+      font-size: 20pt;
+      text-align: center;
+      padding-top: 5%;
+    }
+
+    #maincontainer {
+      background-color: rgba(136, 210, 210, 0.30);
+      height: 100%;
+    }
+
+    #calendarcontainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    #calendarinnercontainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .45);
+      height: 10%;
+      border-radius: 5px;
+      width: 35%;
+      background-color: white;
+      border-style: solid;
+      border-color: rgba(136, 210, 210, 1);
+      border-width: 4px;
+      background-color: rgba(136, 210, 210, 0.5);
+    }
+
+    #calendarinnercontainer h2 {
+      font-size: 15pt;
+      font-weight: 600;
+    }
+
+    #calendarimg {
+      width: 20%;
+      margin: 0;
+      margin-top: -5px;
+      margin-bottom: 5px;
+    }
+
+    /*
+    @media screen and (min-width: 400px)
+    {
+      #bannercontainer {
+        min-height: 250px;
+      }
+    }
+*/
+
+  </style>
+
+</head>
+
+<body>
+  <!--  bg-light-->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#"><span id="homepagetitle">Chronos</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Course View</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="html/testers.html">Calendar View</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item" id="logout">
+          <a class="nav-link" href="#">Log-out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="maincontainer">
+    <div id="bannercontainer">
+      <h1>My Courses</h1>
+      <img id="bannerimage" alt="coursebanner" src="IconPics/videoblocks-cartoon-workplace-modern-colorful-office-flat-animation-4k_bfgh8v7vdz_thumbnail-full09.png" />
+    </div>
+
+    <div id="calendarcontainer">
+      <div id="calendarinnercontainer">
+        <div id="calendarbar"></div>
+        <h2>My Calendar</h2>
+        <img id="calendarimg" alt="calendar" src="IconPics/calendar.png">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="coursecontainer" id="comp1510">
+        <div class="coursebar"></div>
+        <h2>COMP<br/>1510</h2>
+      </div>
+      <div class="coursecontainer" id="comp1536">
+        <div class="coursebar"></div>
+        <h2>COMP<br/>1536</h2>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="coursecontainer" id="comp1930">
+        <div class="coursebar"></div>
+        <h2>COMP<br/>1930</h2>
+      </div>
+      <div class="coursecontainer" id="comp1712">
+        <div class="coursebar"></div>
+        <h2>COMP<br/>1712</h2>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="coursecontainer" id="comp1113">
+        <div class="coursebar"></div>
+        <h2>COMP<br/>1113</h2>
+      </div>
+      <div class="coursecontainer" id="comp1100">
+        <div class="coursebar"></div>
+        <h2>COMP<br/>1100</h2>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="coursecontainer" id="comm1116">
+        <div class="coursebar"></div>
+        <h2>COMM<br/>1116</h2>
+      </div>
+      <div class="coursecontainer" id="personal">
+        <div class="coursebar"></div>
+        <h2>My<br/>Dates</h2>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        var name = user.displayName.split(" ", 1);
+
+        document.getElementById("homepagetitle").innerHTML = "Hi " + name + "!";
+      } else {
+        console.log(user);
+      }
+    });
+
+  </script>
+</body>
+
+</html>

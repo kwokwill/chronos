@@ -58,11 +58,13 @@
 
     body {
       height: auto;
-      /*
+      background: linear-gradient(135deg, #b7deed 0%, #71ceef 70%, #21b4e2 96%, #b7deed 100%);
+/*
       background-image: url(GeometricGradientBackgrounds/BlueTealYellow.jpg);
       background-repeat: round;
       background-size: 100% auto;
 */
+
       font-family: 'PT Sans Narrow', sans-serif;
     }
 
@@ -98,7 +100,7 @@
 
     #homepagetitle {
       font-family: 'Cinzel';
-      font-size: 30pt;
+      font-size: 25pt;
       margin: 0 auto;
       padding: 0;
     }
@@ -123,10 +125,11 @@
       height: 100%;
       /*      background-color: rgba(130, 10, 228, 0.57);*/
       font-size: 20pt;
-      padding-top: 30px;
+      padding-top: 10px;
       text-align: center;
-      color: white;
-      background: linear-gradient(135deg, #b7deed 0%, #71ceef 70%, #21b4e2 96%, #b7deed 100%);
+      color: black;
+      background-color: white;
+/*      background: linear-gradient(135deg, #b7deed 0%, #71ceef 70%, #21b4e2 96%, #b7deed 100%);*/
       /* adds opacity and maxwidth and height*/
       /*      background: rgba(29, 154, 179, 0.5);*/
 
@@ -142,14 +145,14 @@
       right: 0;
       margin-bottom: -50px;
       background: #000;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(105, 105, 230, 0.25);
       color: #FFF;
       padding: 10px;
       text-align: center;
       border-bottom-left-radius: 25px;
       border-bottom-right-radius: 25px;
       max-width: 400px;
-      height: 25%;
+      height: 60%;
     }
 
     #calendarcontainer {
@@ -174,16 +177,14 @@
     }
 
     .navbar {
-      background-color: rgba(29, 120, 179, 0.6);
+      background-color: rgba(118, 116, 116, 0.33);
     }
   </style>
 </head>
 
 <body>
 
-
-
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#"><span id="homepagetitle">Chronos</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -242,8 +243,9 @@
       <div class="box">
         <div class="boxInner">
           <a class="linkBox" href="html/comp1100.html">
-            <p>COMP<br />1100</p>
-            <!--            <div class="titleBox">Items Due: 3</div>-->
+            <div class="titleBox"></div>
+            <p>COMP<br/>1100</p>
+                        
           </a>
         </div>
       </div>
@@ -276,7 +278,7 @@
       <div class="box">
         <div class="boxInner">
           <a class="linkBox" href="html/comp1712.html">
-          <p>COMP<br />1712</p>
+          <p>COMP<br/>1712</p>
           <!--          <div class="titleBox">Items Due: 3</div>-->
         </div>
       </div>
@@ -288,6 +290,7 @@
       </div>
 
     </div>
+    
   </section>
 
   <script>

@@ -9,10 +9,14 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="css/index.css"/>
+    <link type="text/css" rel="stylesheet" href="css/index.css" />
+    <link type="text/css" rel="stylesheet" href="css/indexTeam.css" />
 </head>
 
-
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Cinzel:700&display=swap');
+</style>
 
 <body>
 
@@ -49,19 +53,93 @@
     </div>
 
     <!-- Container (About Section) -->
-    <div id="about" class="backDiv">
-        <h3 class="chronosHead"><br>What is Chronos</h3>
-        <img id="chronos1" class="d-flex ml-3" src="bgPics/booking.png" alt="Generic placeholder image">
-        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</p>
-        <h3 class="chronosHead"> Focus On Big Ideas </h3>
-        <img id="focus" src="bgPics/focus.png" alt="Focus Picture">
-        <h3 class="chronosHead"> See Your Progress </h3>
-        <img id="progress" src="bgPics/progress.png" />
-        <div class="factNote"> z</div>
-        <h3 class="chronosHead"> Be On the Go </h3>
-        <img id="onTheGo" src="bgPics/onTheGo.png" />
-        <div> See your schedule on all your devices<br> Anytime, Anywhere</div>
+    <div class="backDiv" id="about">
+        <h2 class="chronosHead">What is Chronos</h2>
+
+        <div class="gallery">
+
+            <img src="bgPics/booking.png" alt="Planning" width="500" height="300">
+
+            <div class="desc" id="planningInfo">Chronos is the number one leading calendar site for CST students. With
+                ease and quickness, students can view assignments, quizzes, and exams at the tip of their fingers.</div>
+        </div>
+
+        <h4 class="chronosHead">Empower Yourself</h4>
+
+        <div class="responsive">
+            <div class="gallery">
+                <img src="bgPics/focus.png" alt="HTML & CSS & JS" id="focusPic" width="500" height="300"
+                    style="width: 83.5%">
+                <div class="desc">Spend less time planning and more time doing. Focus on the big things.</div>
+            </div>
+        </div>
+
+
+        <div class="responsive" style="margin-bottom: 20px">
+            <div class="gallery">
+                <img src="bgPics/progress.png" alt="Progress Chart" width="500" height="300" style="width: 75%">
+                <div class="desc">See your progress as you accomplish your goals. </div>
+            </div>
+        </div>
+
+        <div id="goGallery" class="responsive">
+            <div class="gallery">
+                <img src="bgPics/onTheGo.png" alt="On the Go" width="500" height="400" style="width: 100%">
+                <div class="desc">Be on the go! View your schedule from your phone or laptop from anywhere.</div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div id="mainQuote">
+            <p>" They always say time changes things, but you actually have to change them yourself. "</p>
+            <p id="quoteWho">Andy Warhol<br> Previous CST student</p>
+        </div>
+        <h2 id="team"><span style="color: red">Meet</span> The Team</h2>
+        <br>
+
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="bgPics/Profile-720.png" alt="Adam" class="profileImage">
+                    <div class="container">
+                        <h2>Adam</h2>
+                        <p class="title">Founder</p>
+                        <p class="profileText">Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>example@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <img src="bgPics/Profile-720.png" alt="Charlie" class="profileImage">
+                    <div class="container">
+                        <h2>Charlie</h2>
+                        <p class="title">Founder</p>
+                        <p class="profileText">Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>example@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="bgPics/Profile-720.png" alt="William" class="profileImage">
+                    <div class="container">
+                        <h2>William</h2>
+                        <p class="title">Founder</p>
+                        <p class="profileText">Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>example@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
 
     <script>
 
@@ -89,9 +167,5 @@
     </script>
 
 </body>
-
-
-
-
 
 </html>
