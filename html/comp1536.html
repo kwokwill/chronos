@@ -6,7 +6,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
   <meta charset="utf-8">
-  <title>COMP 1712</title>
+  <title>COMP 1536</title>
   <meta name="COMP 1930 LOADING PAGE" content="listing assignments in course">
   <meta name="William, Adam, Charlie" content="Chronos">
 
@@ -104,8 +104,8 @@
       margin-bottom: 5px;
       border-radius: 5px;
 
-/*      background-color: lightblue;*/
-/*      border: solid black 1px;*/
+      /*      background-color: lightblue;*/
+      /*      border: solid black 1px;*/
     }
 
     .list-group {
@@ -114,24 +114,23 @@
 
     .list-group-item {
       background-color: white;
-/*
+      /*
       border-style: solid;
       border-color: white;
 */
-/*      border-width: 3px;*/
+      /*      border-width: 3px;*/
       height: 100%;
       width: 100%;
       margin: 0 auto;
       margin-bottom: 0px;
       box-shadow: 0 3px 7px 0px rgba(0, 0, 0, .35);
     }
-
   </style>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#"><span id="homepagetitle">COMP 1712</span></a>
+    <a class="navbar-brand" href="#"><span id="homepagetitle">COMP 1536</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -164,7 +163,7 @@
     <div id="bannercontainer">
       <!--      <h1>Business Analysis</h1>-->
       <div id="bannerpicturecontainer">
-        <img class="bannerimage" alt="coursebanner" src="../IconPics/BlueMountain.jpg">
+        <img class="bannerimage" alt="coursebanner" src="../IconPics/OrangeMoutain.jpg">
         <!--        <img class="bannerimage" alt="coursebanner" src="../IconPics/imageedit_4_3085042849.gif">-->
       </div>
     </div>
@@ -173,10 +172,6 @@
       <ul id="COMP1930-list"></ul>
     </div>
   </div>
-
-
-
-
 
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
   <script>
@@ -205,7 +200,6 @@
     db.settings({
       timestampsInSnapshots: true
     });
-
   </script>
   <script>
     const workList = document.querySelector('.list-group');
@@ -238,13 +232,13 @@
       cross.addEventListener('click', (e) => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute('data-id');
-        db.collection('COMP1712').doc(id).delete();
+        db.collection('COMP1536').doc(id).delete();
       });
     }
     // real-time listener
 
 
-    db.collection("COMP1712").orderBy("dueDate", "desc").onSnapshot(snapshot => {
+    db.collection("COMP1536").orderBy("dueDate", "desc").onSnapshot(snapshot => {
       let changes = snapshot.docChanges();
       changes.forEach(change => {
 
@@ -259,9 +253,6 @@
         }
       });
     });
-
   </script>
 
-</body>
-
-</html>
+</body></html>
