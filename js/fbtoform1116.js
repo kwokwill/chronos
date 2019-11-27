@@ -2,7 +2,7 @@ const workList = document.querySelector('#COMP1116-list');
 const form = document.querySelector('#add-1116-form');
 
 // create element & render workList
-function renderWork(doc) {
+function renderWork(doc, courseName) {
     let li = document.createElement('li');
     let name = document.createElement('span');
     let dueDate = document.createElement('span');
@@ -26,14 +26,13 @@ function renderWork(doc) {
     li.appendChild(description);
     li.appendChild(dueDate);
     li.appendChild(cross);
-
     workList.appendChild(li);
 
     // deleting data
     cross.addEventListener('click', (e) => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute('data-id');
-        db.collection('COMP1116').doc(id).delete();
+        db.collection(courseName).doc(id).delete();
     });
 }
 
@@ -85,7 +84,7 @@ function logValue() {
             console.log(change.doc.data());
 
             if (change.type == 'added') {
-                renderWork(change.doc);
+                renderWork(change.doc, this.value);
 
             } else if (change.type == 'removed') {
                 let li = workList.querySelector('[data-id=' + change.doc.id + ']');
