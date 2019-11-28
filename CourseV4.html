@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Chronos</title>
+    <meta name="Chronos Due-Date Tracker" content="HomePage">
+    <meta name="Group16" content="HomePage">
+
+    <!-- Bootstrap for Mobile-first -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDxcuP8iqbfPbtYPwAFh04xEc3SZ-JlNqs",
+            authDomain: "chronos-c7366.firebaseapp.com",
+            databaseURL: "https://chronos-c7366.firebaseio.com",
+            projectId: "chronos-c7366",
+            storageBucket: "chronos-c7366.appspot.com",
+            messagingSenderId: "821932163722",
+            appId: "1:821932163722:web:7531781e1df6f497342373"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <style>
+        /*    Imported fonts*/
+        @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Yeon+Sung&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+
+        html {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: 'PT Sans Narrow', sans-serif;
+            position: relative;
+        }
+
+        #homepagetitle {
+            font-family: 'Cinzel';
+            font-size: 15pt;
+            margin: 0 auto;
+            padding: 0;
+            font-weight: 600;
+        }
+
+        .navbar {
+            box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .30);
+            background-color: rgba(136, 210, 210, 0.12);
+        }
+
+        #bannercontainer {
+            background-color: rgba(138, 201, 203);
+            background-size: 100% auto;
+            min-height: 130px;
+            box-shadow: 0 2px 5px 0px rgba(0, 0, 0, .35);
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-content: center;
+            max-height: 330px;
+        }
+
+        #bannerimage {
+            /*
+      height: 130px;
+      width: 260px;
+*/
+            width: 80%;
+            height: auto;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        #bannercontainer h1 {
+            font-size: 25pt;
+            font-weight: 600;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+            transform: translateY(20px)
+        }
+
+        #mycalendar img {
+            height: 50px;
+            width: 50px;
+        }
+
+        #coursecontainer {
+            margin: 10px 10px;
+            height: 90%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 5px;
+            justify-content: space-between
+        }
+
+        /*
+        .courses {
+            box-shadow: 0 3px 7px 0px rgba(0, 0, 0, .35);
+            height: 25%;
+            border-radius: 5px;
+            width: 100%;
+            margin: 0 auto;
+            background-color: white;
+            margin-bottom: 2px;
+            display: flex;
+            align-content: center;
+            justify-content: space-around;
+            border-style: solid;
+            border-color: rgba(136, 210, 210, 0.6);
+            border-left-width: 2px;
+            border-right-width: 2px;
+        }
+*/
+
+        .courseitems {
+            width: 48%;
+            padding-top: 50%;
+            border-radius: 2px;
+            background-color: rgba(136, 210, 210, 0.20);
+            position: relative;
+            box-shadow: 0 1px 2px 0px rgba(0, 0, 0, .15);
+            margin-bottom: 15px;
+        }
+
+        .courseitems p {
+            font-weight: 600;
+            font-size: 20pt;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-27.7px, -40px);
+            text-align: center;
+        }
+
+        #mycalendar {
+            transform: translate(-40.5px, -40px);
+        }
+
+        #maincontainer {
+            /*            background-color: rgba(136, 210, 210, 0.30);*/
+
+        }
+
+        #calendarcontainer {
+            margin-top: 35px;
+            margin-bottom: -65px;
+            z-index: 1;
+        }
+
+        #calendarinnercontainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .35);
+            height: 10%;
+            border-radius: 5px;
+            width: 20%;
+            border-style: solid;
+            border-color: white;
+            border-width: 2.5px;
+            background-color: rgba(136, 210, 210, 0.5);
+        }
+
+        #calendarinnercontainer h2 {
+            font-size: 10pt;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        #calendarimg {
+            display: block;
+            width: 30%;
+            margin-top: -5px;
+            margin-bottom: 5px;
+        }
+
+        #footer {
+            width: 100%;
+        }
+
+        #footertext {
+            text-align: center;
+            padding-bottom: 5px;
+            margin: 0;
+        }
+
+        #copyright {
+            width: 25px;
+        }
+
+
+        @media screen and (min-width: 450px) {
+            #coursecontainer {
+                justify-content: flex-start;
+            }
+
+            .courseitems {
+                width: 31%;
+                padding-top: 31%;
+                margin: 1.1%;
+            }
+        }
+
+        @media screen and (min-width: 750px) {
+            #coursecontainer {
+                justify-content: flex-start;
+            }
+
+            .courseitems {
+                width: 22%;
+                padding-top: 22%;
+                margin: 1.5%;
+            }
+            
+            #bannercontainer {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-around;
+                align-items: center;
+            }
+            
+            #bannerimage {
+                max-width: 300px;
+                margin: 0;
+            }
+            
+            #bannercontainer h1 {
+               min-width: 60%;
+                font-size: 40pt;
+            }
+        }
+        
+        @media screen and (min-width: 1000px) {
+            #bannercontainer {
+                width: 60%;
+                height: 100vh;
+            flex-direction: column;
+                max-height: 100vh;
+            }
+            
+            #bannercontainer {
+                box-shadow: none;
+            }
+            
+            #bannerimage {
+                min-width: 100%;
+                height: auto;
+            }
+            
+            #maincontainer {
+                display: flex;
+                background-color: rgba(138, 201, 203);
+                align-items: center;
+            }
+            
+            #coursecontainer {
+                width: 500px;
+                height: 500px;
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 2px 0px rgba(0, 0, 0, .15);
+                margin-right: 30px;
+
+            }
+            
+            .courseitems {
+                width: 31%;
+                padding-top: 31%;
+                margin: 1.1%;
+            }
+            
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--  bg-light-->
+    <nav class="navbar navbar-expand-lg navbar-light">
+
+        <a class="navbar-brand" href="#"><span id="homepagetitle">Chronos</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../chronos/index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="html/calendar.html">Calendar View</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item" id="logout">
+                    <a class="nav-link" href="#">Log-out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="maincontainer">
+
+        <div id="bannercontainer">
+
+            <h1>My Courses</h1>
+
+            <!--
+      <div id="calendarcontainer">
+        <div id="calendarinnercontainer">
+          <a href="html/calendar.html">
+            <div id="calendarbar"></div>
+            <h2>My Calendar</h2>
+          </a>
+          <img id="calendarimg" alt="calendar" src="IconPics/calendar.png">
+        </div>
+      </div>
+-->
+
+            <img id="bannerimage" alt="coursebanner" src="IconPics/videoblocks-cartoon-workplace-modern-colorful-office-flat-animation-4k_bfgh8v7vdz_thumbnail-full09.png" />
+        </div>
+
+
+        <div id="coursecontainer">
+
+            <div class="courseitems">
+                <p id="mycalendar">My<br />Calendar</p>
+            </div>
+            <div class="courseitems">
+                <p>COMP<br />1510</p>
+            </div>
+
+
+
+            <div class="courseitems">
+                <p>COMP<br />1536</p>
+            </div>
+            <div class="courseitems">
+                <p>COMP<br />1712</p>
+            </div>
+
+
+
+            <div class="courseitems">
+                <p>COMP<br />1930</p>
+            </div>
+            <div class="courseitems">
+                <p>COMP<br />1100</p>
+            </div>
+
+
+
+            <div class="courseitems">
+                <p>COMP<br />1113</p>
+            </div>
+            <div class="courseitems">
+                <p>COMM<br />1116</p>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div id="footer">
+
+        <p id="footertext"><img id="copyright" alt="copyright" src="IconPics/Copyright-Symbol-PNG-File.png"> All rights reserved Chronos</p>
+    </div>
+
+    <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                var name = user.displayName.split(" ", 1);
+
+                document.getElementById("homepagetitle").innerHTML = "Hi " + name + "!";
+            } else {
+                console.log(user);
+            }
+        });
+    </script>
+</body></html>

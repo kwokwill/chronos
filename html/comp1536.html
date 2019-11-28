@@ -125,6 +125,51 @@
       margin-bottom: 0px;
       box-shadow: 0 3px 7px 0px rgba(0, 0, 0, .35);
     }
+
+    @media screen and (min-width: 768px) {
+
+      #maincontainer {
+        display: flex;
+        position: relative;
+
+      }
+
+      #bannercontainer {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        background: url(../IconPics/OrangeMoutain.jpg) no-repeat center center fixed;
+        background-size: cover;
+      }
+
+      #bannercontainer:after {
+        content: "";
+        background-color: rgba(136, 210, 210, 0.12);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: 0;
+      }
+
+      .bannerimage {
+        display: none;
+      }
+
+      .list-group {
+        position: absolute;
+        right: 50%;
+        top: 80px;
+        width: 500px;
+        transform: translateX(250px);
+      }
+
+      .list-group-item {
+        margin-bottom: 5px;
+      }
+    }
+
   </style>
 </head>
 
@@ -200,6 +245,7 @@
     db.settings({
       timestampsInSnapshots: true
     });
+
   </script>
   <script>
     const workList = document.querySelector('.list-group');
@@ -253,6 +299,9 @@
         }
       });
     });
+
   </script>
 
-</body></html>
+</body>
+
+</html>
