@@ -256,6 +256,7 @@
       let name = document.createElement('div');
       let dueDate = document.createElement('p');
       let cross = document.createElement('div');
+      let desc = document.createElement('div');
 
       var stringMonth = doc.data().dueDate + '';
       var res = stringMonth.split("-"); // turn the date into a list format (Split by / if needed)
@@ -264,11 +265,12 @@
       ];
 
       dueDate.textContent = (months[res[1] - 1] + " " + [res[2]] + ", " + [res[0]]);
-
+      desc.textContent = doc.data().description;
       li.setAttribute('data-id', doc.id);
       name.textContent = doc.data().name;
 
       li.appendChild(name);
+      li.appendChild(desc);
       li.appendChild(dueDate);
       li.appendChild(cross);
 
