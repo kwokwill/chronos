@@ -41,6 +41,7 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+
   </script>
 
 
@@ -59,7 +60,7 @@
     body {
       height: auto;
       background: linear-gradient(135deg, #b7deed 0%, #71ceef 70%, #21b4e2 96%, #b7deed 100%);
-/*
+      /*
       background-image: url(GeometricGradientBackgrounds/BlueTealYellow.jpg);
       background-repeat: round;
       background-size: 100% auto;
@@ -129,7 +130,7 @@
       text-align: center;
       color: black;
       background-color: white;
-/*      background: linear-gradient(135deg, #b7deed 0%, #71ceef 70%, #21b4e2 96%, #b7deed 100%);*/
+      /*      background: linear-gradient(135deg, #b7deed 0%, #71ceef 70%, #21b4e2 96%, #b7deed 100%);*/
       /* adds opacity and maxwidth and height*/
       /*      background: rgba(29, 154, 179, 0.5);*/
 
@@ -179,6 +180,7 @@
     .navbar {
       background-color: rgba(118, 116, 116, 0.33);
     }
+
   </style>
 </head>
 
@@ -244,14 +246,14 @@
         <div class="boxInner">
           <a class="linkBox" href="html/comp1100.html">
             <div class="titleBox"></div>
-            <p>COMP<br/>1100</p>
+            <p>COMP<br />1100</p>
           </a>
         </div>
       </div>
       <div class="box">
         <div class="boxInner">
           <div class="titleBox"></div>
-          <p>COMM<br/>1116</p>
+          <p>COMM<br />1116</p>
           <!--          <div class="titleBox">Items Due: 3</div>-->
         </div>
       </div>
@@ -282,8 +284,8 @@
         <div class="boxInner">
           <a class="linkBox" href="html/comp1712.html">
             <div class="titleBox"></div>
-          <p>COMP<br/>1712</p>
-          <!--          <div class="titleBox">Items Due: 3</div>-->
+            <p>COMP<br />1712</p>
+            <!--          <div class="titleBox">Items Due: 3</div>-->
           </a>
         </div>
       </div>
@@ -296,7 +298,7 @@
       </div>
 
     </div>
-    
+
   </section>
 
   <script>
@@ -311,12 +313,15 @@
       }
     });
 
+//    firebase.auth().onAuthStateChanged(function(user) {
+//      $("#logout").click(function(event) {
+//        firebase.auth().signOut(function(user))
+//      })
+//    });
 
-    //    firebase.auth().onAuthStateChanged(function(user) {
-    //      $("#logout").click(function(event) {
-    //      firebase.auth().signOut(function(user))
-    //    })
-    //    });
+
+
+
 
     //     when user clicks log-out
     //    $("#logout").click(function(event) {
@@ -324,8 +329,11 @@
     //      
     //      firebase.auth().signOut(function(user))
     //    });
+
   </script>
 
 
 
-</body></html>
+</body>
+
+</html>
