@@ -7,7 +7,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
   <meta charset="utf-8">
   <title>COMP 1510</title>
-  <meta name="COMP 1510 LOADING PAGE" content="listing assignments in course">
+  <meta name="COMP 1930 LOADING PAGE" content="listing assignments in course">
   <meta name="William, Adam, Charlie" content="Chronos">
 
   <!-- Bootstrap for Mobile-first -->
@@ -18,38 +18,164 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
   <style>
-    .list-group {
+    @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Yeon+Sung&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
 
+    html {
+      margin: 0;
     }
-    .list-group-item {
-      background: linear-gradient(to left, #1e5799 0%,#2989d8 86%);
-      border-style: solid;
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'PT Sans Narrow', sans-serif;
     }
-    
+
     .navbar {
-      background-color: rgba(29, 120, 179, 0.6);
+      box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .45);
+      background-color: rgba(136, 210, 210, 0.12);
     }
-  </style>
 
-  <!-- Optional styles and scripts of your own -->
-  <!-- <link rel="stylesheet" href="styles/style.css">-->
-  <!-- <script src="scripts/script.js"></script>-->
-  <style>
+    #homepagetitle {
+      font-family: 'Cinzel';
+      font-size: 25pt;
+      margin: 0 auto;
+      padding: 0;
+      font-weight: 600;
+    }
+
+    #maincontainer {
+      background-color: rgba(136, 210, 210, 0.30);
+      height: 100%;
+    }
+
+    #bannercontainer {
+      /*      background-image: url(IconPics/videoblocks-cartoon-workplace-modern-colorful-office-flat-animation-4k_bfgh8v7vdz_thumbnail-full09.png);*/
+      background-color: #8ac9cb;
+      background-size: 100% auto;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .35);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-content: center;
+    }
+
+    .bannerimage {
+      width: 100%;
+      max-height: 195px;
+      margin: 0 auto;
+      filter: opacity(0.65);
+      box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .35);
+    }
+
+    #bannercontainer h1 {
+      margin-top: 10px;
+      margin-bottom: -50px;
+      font-size: 25pt;
+      color: white;
+      font-weight: 600;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+    }
+
+    #bannerpicturecontainer {
+      display: flex;
+      justify-content: center;
+      align-content: flex-end;
+      /*
+      margin-top: 10px;
+      margin-bottom: -10px;
+*/
+      /*
+      border-style: solid;
+      border-width: 8px;
+      border-color: white;
+*/
+    }
+
     .testing {
-      width: 92%;
+      width: 100%;
       height: 100px;
       align-content: center;
-      margin-left: 10px;
+      margin-left: 0 auto;
       margin-bottom: 5px;
       border-radius: 5px;
-      border: solid black 1px;
+
+      /*      background-color: lightblue;*/
+      /*      border: solid black 1px;*/
     }
+
+    .list-group {
+      margin-top: -35px;
+    }
+
+    .list-group-item {
+      background-color: white;
+      /*
+      border-style: solid;
+      border-color: white;
+*/
+      /*      border-width: 3px;*/
+      height: 100%;
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 0px;
+      box-shadow: 0 3px 7px 0px rgba(0, 0, 0, .35);
+    }
+
+    @media screen and (min-width: 768px) {
+
+      #maincontainer {
+        display: flex;
+        position: relative;
+
+      }
+
+      #bannercontainer {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        background: url(../IconPics/PurpleMountain.jpg) no-repeat center center fixed;
+        background-size: cover;
+      }
+
+      #bannercontainer:after {
+        content: "";
+        background-color: rgba(136, 210, 210, 0.12);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: 0;
+      }
+
+      .bannerimage {
+        display: none;
+      }
+
+      .list-group {
+        position: absolute;
+        right: 50%;
+        top: 80px;
+        width: 500px;
+        transform: translateX(250px);
+      }
+
+      .list-group-item {
+        margin-bottom: 5px;
+      }
+    }
+
   </style>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#">Chronos</a>
+    <a class="navbar-brand" href="#"><span id="homepagetitle">COMP 1510</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -57,13 +183,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Course View</a>
+          <a class="nav-link" href="../CourseV4.ht  ml">Course View</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Calendar View</a>
+          <a class="nav-link" href="calendar.html">Calendar View</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
@@ -78,10 +204,20 @@
     </div>
   </nav>
 
-  <div id="titleBar" style="text-align: center"> COMP 1510 </div>
-  <div class="list-group">
-    <ul id="COMP1930-list"></ul>
+  <div id="maincontainer">
+    <div id="bannercontainer">
+      <!--      <h1>Business Analysis</h1>-->
+      <div id="bannerpicturecontainer">
+        <img class="bannerimage" alt="coursebanner" src="../IconPics/PurpleMountain.jpg">
+        <!--        <img class="bannerimage" alt="coursebanner" src="../IconPics/imageedit_4_3085042849.gif">-->
+      </div>
+    </div>
+
+    <div class="list-group">
+      <ul id="COMP1930-list"></ul>
+    </div>
   </div>
+
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
   <script>
     // Initialize Firebase
@@ -109,6 +245,7 @@
     db.settings({
       timestampsInSnapshots: true
     });
+
   </script>
   <script>
     const workList = document.querySelector('.list-group');
@@ -119,6 +256,7 @@
       let name = document.createElement('div');
       let dueDate = document.createElement('p');
       let cross = document.createElement('div');
+      let desc = document.createElement('div');
 
       var stringMonth = doc.data().dueDate + '';
       var res = stringMonth.split("-"); // turn the date into a list format (Split by / if needed)
@@ -127,10 +265,10 @@
       ];
 
       dueDate.textContent = (months[res[1] - 1] + " " + [res[2]] + ", " + [res[0]]);
-
+      desc.textContent = doc.data().description;
       li.setAttribute('data-id', doc.id);
       name.textContent = doc.data().name;
-
+      li.appendChild(desc);
       li.appendChild(name);
       li.appendChild(dueDate);
       li.appendChild(cross);
@@ -161,8 +299,10 @@
           workList.removeChild(li);
         }
       });
-
     });
+
   </script>
 
-</body></html>
+</body>
+
+</html>

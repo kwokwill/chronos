@@ -28,7 +28,7 @@
     body {
       margin: 0;
       padding: 0;
-      height: 1000px;
+      height: 100%;
       font-family: 'PT Sans Narrow', sans-serif;
     }
 
@@ -54,7 +54,6 @@
       /*      background-image: url(IconPics/videoblocks-cartoon-workplace-modern-colorful-office-flat-animation-4k_bfgh8v7vdz_thumbnail-full09.png);*/
       background-color: #8ac9cb;
       background-size: 100% auto;
-      min-height: 220px;
       margin-bottom: 20px;
       box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .35);
       display: flex;
@@ -64,15 +63,18 @@
     }
 
     .bannerimage {
-      height: 220px;
-      width: 375px;
+      width: 100%;
+      max-height: 195px;
       margin: 0 auto;
+      filter: opacity(0.65);
+      box-shadow: 0 4px 12px 0px rgba(0, 0, 0, .35);
     }
 
     #bannercontainer h1 {
       margin-top: 10px;
       margin-bottom: -50px;
       font-size: 25pt;
+      color: white;
       font-weight: 600;
       text-align: center;
       z-index: 1;
@@ -83,13 +85,15 @@
       display: flex;
       justify-content: center;
       align-content: flex-end;
-/*
+      /*
       margin-top: 10px;
       margin-bottom: -10px;
 */
+      /*
       border-style: solid;
       border-width: 8px;
       border-color: white;
+*/
     }
 
     .testing {
@@ -99,24 +103,71 @@
       margin-left: 0 auto;
       margin-bottom: 5px;
       border-radius: 5px;
-      background-color: lightblue;
-      border: solid black 1px;
+
+      /*      background-color: lightblue;*/
+      /*      border: solid black 1px;*/
     }
 
     .list-group {
-      margin-top: -20px;
+      margin-top: -35px;
     }
 
     .list-group-item {
-      background-color: rgba(136, 210, 210, 0.30);
+      background-color: white;
+      /*
       border-style: solid;
       border-color: white;
-      border-width: 3px;
+*/
+      /*      border-width: 3px;*/
       height: 100%;
-      width: 95%;
+      width: 100%;
       margin: 0 auto;
-      margin-bottom: 10px;
+      margin-bottom: 0px;
       box-shadow: 0 3px 7px 0px rgba(0, 0, 0, .35);
+    }
+
+    @media screen and (min-width: 768px) {
+
+      #maincontainer {
+        display: flex;
+        position: relative;
+
+      }
+
+      #bannercontainer {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        background: url(../IconPics/BlueMountain.jpg) no-repeat center center fixed;
+        background-size: cover;
+      }
+
+      #bannercontainer:after {
+        content: "";
+        background-color: rgba(136, 210, 210, 0.12);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: 0;
+      }
+
+      .bannerimage {
+        display: none;
+      }
+
+      .list-group {
+        position: absolute;
+        right: 50%;
+        top: 80px;
+        width: 500px;
+        transform: translateX(250px);
+      }
+
+      .list-group-item {
+        margin-bottom: 5px;
+      }
     }
 
   </style>
@@ -135,7 +186,7 @@
           <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../CourseV2.html">Course View</a>
+          <a class="nav-link" href="../CourseV4.html">Course View</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="calendar.html">Calendar View</a>
@@ -155,9 +206,9 @@
 
   <div id="maincontainer">
     <div id="bannercontainer">
-      <h1>Business Analysis</h1>
+      <!--      <h1>Business Analysis</h1>-->
       <div id="bannerpicturecontainer">
-        <img class="bannerimage" alt="coursebanner" src="../IconPics/imageedit_8_4666430084.gif">
+        <img class="bannerimage" alt="coursebanner" src="../IconPics/BlueMountain.jpg">
         <!--        <img class="bannerimage" alt="coursebanner" src="../IconPics/imageedit_4_3085042849.gif">-->
       </div>
     </div>
@@ -209,6 +260,7 @@
       let name = document.createElement('div');
       let dueDate = document.createElement('p');
       let cross = document.createElement('div');
+      let desc = document.createElement('div');
 
       var stringMonth = doc.data().dueDate + '';
       var res = stringMonth.split("-"); // turn the date into a list format (Split by / if needed)
@@ -217,11 +269,12 @@
       ];
 
       dueDate.textContent = (months[res[1] - 1] + " " + [res[2]] + ", " + [res[0]]);
-
+      desc.textContent = doc.data().description;
       li.setAttribute('data-id', doc.id);
       name.textContent = doc.data().name;
 
       li.appendChild(name);
+      li.appendChild(desc);
       li.appendChild(dueDate);
       li.appendChild(cross);
 
@@ -251,7 +304,6 @@
           workList.removeChild(li);
         }
       });
-
     });
 
   </script>
