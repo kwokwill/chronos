@@ -8,26 +8,29 @@
   <title>Calendar</title>
   <meta name="description" content="Calendar">
   <meta name="author" content="Chronos">
-    <meta name="description" content="With help of Charles Anderson from CodePen">
-      <meta name="viewport" content="maximum-scale=1">
+  <meta name="description" content="With help of Charles Anderson from CodePen">
+  <meta name="viewport" content="maximum-scale=1">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/calendar.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/calendar.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
-    </script>
-      <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  </script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
 
-    <style> @import url('https://fonts.googleapis.com/css?family=Cinzel:700&display=swap'); </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Cinzel:700&display=swap');
+  </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbarStyle">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbarStyle">
     <a class="navbar-brand" href="#"><span id="homepagetitle">Chronos</span></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -48,7 +51,7 @@
           <a class="nav-link" href="#">About</a>
         </li>
         <li class="nav-item">
-          <a id="logout" class="nav-link" href="#">Log-out</a>
+          <a id="logout" class="nav-link" href="../index.html">Log-out</a>
         </li>
       </ul>
     </div>
@@ -56,8 +59,8 @@
   <div class="content">
     <div class="calendar-container">
       <div class="calendar">
-        </div>
-        <!-- <table class="months-table">
+      </div>
+      <!-- <table class="months-table">
           <tbody>
             <tr class="months-row" id="months1">
               <td class="month">Jan</td>
@@ -79,44 +82,44 @@
           </tbody>
         </table> -->
 
-        <!-- month-header will have printMonth displayed -->
-        <div class="month-header">
-          <span class="left-month" id="prevMonth"> &lang;</span>
-          <span class="printMonth" id="labelMonth"></span>
-          <!-- year and label must be entered so that collection will read it -->
-          <span class="year" id="label" style="color: white"> </span>
-          <!-- Year displayed and will be shown as a dropdown item selector-->
-          <select id="mySelect" onchange="myFunction()">
-            <option class="op" value="2019">2019</option>
-            <option class="op" value="2020">2020</option>
-            <option class="op" value="2021">2021</option>
-            <option class="op" value="2022">2022</option>
-          </select>
+      <!-- month-header will have printMonth displayed -->
+      <div class="month-header">
+        <span class="left-month" id="prevMonth"> &lang;</span>
+        <span class="printMonth" id="labelMonth"></span>
+        <!-- year and label must be entered so that collection will read it -->
+        <span class="year" id="label" style="color: white"> </span>
+        <!-- Year displayed and will be shown as a dropdown item selector-->
+        <select id="mySelect" onchange="myFunction()">
+          <option class="op" value="2019">2019</option>
+          <option class="op" value="2020">2020</option>
+          <option class="op" value="2021">2021</option>
+          <option class="op" value="2022">2022</option>
+        </select>
 
-          <span class="right-month" id="nextMonth"> &rang; </span>
-          <!-- displaying only when in mobile to ensure usage of year -->
-          <span class="left-button" id="prev"> &lang; </span>
-          <span class="right-button" id="next"> &rang; </span>
-        </div>
-
-        <table class="days-table">
-          <td class="day">Sun</td>
-          <td class="day">Mon</td>
-          <td class="day">Tue</td>
-          <td class="day">Wed</td>
-          <td class="day">Thu</td>
-          <td class="day">Fri</td>
-          <td class="day">Sat</td>
-        </table>
-        <div class="frame">
-          <table class="dates-table">
-            <tbody class="tbody">
-            </tbody>
-          </table>
-        </div>
-        <button class="button" id="add-button">+</button>
+        <span class="right-month" id="nextMonth"> &rang; </span>
+        <!-- displaying only when in mobile to ensure usage of year -->
+        <span class="left-button" id="prev"> &lang; </span>
+        <span class="right-button" id="next"> &rang; </span>
       </div>
-    
+
+      <table class="days-table">
+        <td class="day">Sun</td>
+        <td class="day">Mon</td>
+        <td class="day">Tue</td>
+        <td class="day">Wed</td>
+        <td class="day">Thu</td>
+        <td class="day">Fri</td>
+        <td class="day">Sat</td>
+      </table>
+      <div class="frame">
+        <table class="dates-table">
+          <tbody class="tbody">
+          </tbody>
+        </table>
+      </div>
+      <button class="button" id="add-button">+</button>
+    </div>
+
 
     <div class="dialog" id="dialog">
       <h2 class="dialog-header"> Add New Event! </h2>
@@ -128,7 +131,7 @@
           <input class="input" type="text" id="eventInfo" maxlength="60">
           <input type="button" value="Cancel" class="button" id="cancel-button">
           <input type="button" value="OK" class="button" id="ok-button">
-          
+
         </div>
       </form>
     </div>
@@ -157,17 +160,18 @@
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
     const firestore = firebase.firestore();
-    const settings = {/* your settings... */ timestampsInSnapshots: true};
+    const settings = {/* your settings... */ timestampsInSnapshots: true };
     firestore.settings(settings);
 
   </script>
   <!-- Dialog Box-->
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
-  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
   <script>
-      
+
     // Setup the calendar with the current date
-    $(document).ready(function() {
+    $(document).ready(function () {
       var date = new Date();
       var today = date.getDate();
       // Set click handlers for DOM elements
@@ -194,8 +198,8 @@
       // selection button when on laptop
       $("#mySelect").click({
         date: date
-        }, year_chosen);
-      
+      }, year_chosen);
+
       // Set current month as active
       $(".months-row").children().eq(date.getMonth()).addClass("active-month");
       init_calendar(date);
@@ -205,17 +209,17 @@
 
 
     });
-   
 
-    </script>
-    <script src="../js/calendar.js"> </script>
-    <script>
-      function myFunction() {
-        var x = document.getElementById("mySelect").value;
-        document.getElementById("label").innerHTML = x;
-      }
-      </script>
-  
+
+  </script>
+  <script src="../js/calendar.js"> </script>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("mySelect").value;
+      document.getElementById("label").innerHTML = x;
+    }
+  </script>
+
   <!-- The core Firebase JS SDK is always required and must be listed first -->
 
 </body>

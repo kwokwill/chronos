@@ -243,7 +243,7 @@
         case "January":
           monthNum = "1";
           break;
-        case "Febuary":
+        case "February":
           monthNum = "2";
           break;
         case "March":
