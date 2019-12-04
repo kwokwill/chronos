@@ -1,0 +1,681 @@
+/* Overall body and content */
+body {
+    height: 1000px;
+    width: 100%;
+    margin: 0;
+    background: #005C97;
+    background: -webkit-linear-gradient(left, #363795, #005C97);
+    background: -moz-linear-gradient(left, #363795, #005C97);
+    background: -o-linear-gradient(left, #363795, #005C97);
+    background: linear-gradient(to right, #7071bb, #8ab3ce);
+    font-family: Roboto;
+}
+
+.content {
+    overflow: none;
+    max-width: 100%;
+    padding: 0px 0;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    background: transparent;
+    background: -moz-linear-gradient(right, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
+    background: -webkit-linear-gradient(right, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
+    background: linear-gradient(to left, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -webkit-box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+/*  Events display */
+.events-container {
+  height: 100%;
+  width: 100%;
+  float: right;
+  margin: 0px auto;
+  font: 13px Helvetica, Arial, sans-serif;
+  display: inline-block;
+  padding: 0 10px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.events-container:after {
+    clear: both;
+}
+
+.event-card {
+    padding: 35px 0 35px 0;
+    width: 90%;
+    height: 100%;
+    min-height: 110px;
+    margin: 40px auto;
+    display: block;
+    background: #fff;
+    border-left: 20px solid #52A0FD;
+    border-radius: 5px;
+    box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -webkit-box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.event-count,
+.event-name,
+.event-cancelled {
+  display: inline;
+  padding: 0 10px;
+  overflow-wrap: break-word;
+}
+
+.event-count {
+  text-align: right;
+  font-size: 45px;
+}
+
+.event-name {
+  color: #52A0FD;
+  padding-right: 0;
+  text-align: left;
+  font-size: 50px;
+}
+.event-cancelled {
+    color: #FF1744;
+    text-align: right;
+}
+
+/*  Calendar wrapper */
+.calendar-container {
+    float: left;
+    position: relative;
+    margin: 0px auto;
+    height: 135%;
+    width: 100%;
+    background: #fff;
+    font: 13px Helvetica, Arial, san-serif;
+    display: inline-block;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.calendar-container:after {
+    clear: both;
+
+}
+
+.calendar {
+    display: table;
+    width: 100%;
+}
+
+/* Calendar Header */
+.year-header {
+    background: #52A0FD;
+    background: -moz-linear-gradient(left, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
+    background: -webkit-linear-gradient(left, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
+    background: linear-gradient(to right, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
+    font-family: Helvetica;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    height: 125px;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    border-top-left-radius: 3px;
+    padding-top: 40px;
+}
+
+.year-header span {
+    display: inline-block;
+    font-size: 60px;
+    line-height: 40px;
+}
+
+.year-header .year {
+    display: none;
+}
+
+/* mobile label and select */
+#label {
+    position:absolute;
+    left: 43%;
+    top: 115px;
+    font-size: 55px;
+}
+
+
+.op { 
+    color: black !important;
+}
+
+.left-button,
+.right-button {
+cursor: pointer;
+width: 28px;
+text-align: center;
+position: absolute;
+
+}
+
+.left-button {
+left: 38%;
+top: 110px;
+
+-webkit-border-top-left-radius: 5px;
+-moz-border-radius-topleft: 5px;
+border-top-left-radius: 5px;
+}
+
+.right-button {
+right: 40%;
+top: 110px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+border-top-right-radius: 5px;
+}
+
+.left-button:hover {
+background: #3FADFF;
+}
+
+.right-button:hover {
+background: #00C1FF;
+}
+
+/* Month header */
+
+.month-header {
+background: #52A0FD;
+background: -moz-linear-gradient(left, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
+background: -webkit-linear-gradient(left, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
+background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
+url(https://raw.githubusercontent.com/JustMonk/codepen-resource-project/master/img/compressed-header.jpg) right;
+background-size: cover;
+font-family: Helvetica;
+height: 300px;
+text-align: center;
+position: relative;
+color: #fff;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+padding-top: 25px;
+}
+
+.month-header span {
+display: inline-block;
+font-size: 80px;
+line-height: 40px;
+margin-top: 95px;
+}
+
+select {
+display: none;
+}
+
+.left-month,
+.right-month {
+cursor: pointer;
+width: 28px;
+text-align: center;
+position: absolute;
+}
+
+#prev, #next {
+font-size: 45px;
+}
+
+.left-month {
+left: 45px;
+width: 40px;
+-webkit-border-top-left-radius: 5px;
+-moz-border-radius-topleft: 5px;
+border-top-left-radius: 5px;
+}
+
+.right-month {
+right: 40px;
+width: 40px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+border-top-right-radius: 5px;
+}
+
+.left-month:hover {
+background: #3FADFF;
+}
+
+.right-month:hover {
+background: #00C1FF;
+}
+
+/* Buttons */
+.button {
+cursor: pointer;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+outline: none;
+font-size: 1rem;
+border-radius: 25px;
+padding: 0.65rem 1.9rem;
+transition: .2s ease all;
+color: white;
+border: none;
+box-shadow: -1px 10px 20px #9BC6FD;
+
+background: -moz-linear-gradient(left, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
+background: -webkit-linear-gradient(left, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
+/* background: linear-gradient(to right, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%); */
+background: #9cb4e8;
+}
+
+#cancel-button {
+box-shadow: -1px 10px 20px #FF7DAE;
+background: #FF1744;
+background: -moz-linear-gradient(left, #FF1744 0%, #FF5D95 80%, #FF5D95 100%);
+background: -webkit-linear-gradient(left, #FF1744 0%, #FF5D95 80%, #FF5D95 100%);
+background: linear-gradient(to right, #FF1744 0%, #FF5D95 80%, #FF5D95 100%);
+}
+
+#add-button {
+display: block;
+position: absolute;
+right: 20px;
+bottom: 40px;
+padding: 30px 60px;
+font-size: 40px;
+border-radius: 40px;
+}
+
+#add-button:hover,
+#ok-button:hover,
+#cancel-button:hover {
+transform: scale(1.03);
+}
+
+#add-button:active,
+#ok-button:active,
+#cancel-button:active {
+transform: translateY(3px) scale(.97);
+}
+
+/* Days/months tables */
+.days-table,
+.dates-table,
+.months-table {
+border-collapse: separate;
+text-align: center;
+width: 100%;
+font-size: 30pt;
+}
+
+.days-table {
+padding-top: 45px;
+font-weight: 600;
+}
+
+
+.months-table {
+height: 80px;
+}
+
+.day {
+height: 26px;
+width: 10%;
+padding: 0 10px 25px 0;
+line-height: 26px;
+border: 2px solid transparent;
+text-transform: uppercase;
+font-size: 90%;
+color: #837f7f;
+}
+
+.month {
+cursor: default;
+height: 26px;
+width: 26px;
+padding: 10px;
+padding-top: 20px;
+padding-bottom: 15px;
+line-height: 26px;
+text-transform: uppercase;
+font-size: 32px;
+color: #9e9e9e;
+transition: all 250ms;
+}
+
+#months1 .month {
+padding-top: 55px;
+}
+
+.active-month {
+font-weight: bold;
+font-size: 35px;
+color: #FF1744;
+text-shadow: 0 1px 4px RGBA(255, 50, 120, .8);
+}
+
+.month:hover {
+color: #FF1744;
+text-shadow: 0 1px 4px RGBA(255, 50, 120, .8);
+}
+
+/*  Dates table */
+.table-date {
+cursor: default;
+color: #2b2b2b;
+height: 75px;
+width: 26px;
+font-size: 45px;
+padding-top: 60px;
+padding-bottom: 60px;
+line-height: 26px;
+text-align: center;
+border-radius: 20%;
+border: 2px solid transparent;
+transition: all 250ms;
+}
+
+
+.table-date:not(.nil):hover {
+cursor: pointer;
+border-color: rgb(113, 105, 221);
+box-shadow: 0 2px 6px RGBA(113, 105, 221, 0.9);
+}
+
+.event-date {
+border-color: #52A0FD;
+box-shadow: 0 2px 8px RGBA(130, 180, 255, .9);
+}
+
+.active-date {
+background: #9cb4e8;
+box-shadow: 0 2px 6px RGBA(113, 105, 221, 0.9);
+color: #fff;
+width: 10px;
+}
+
+.event-date.active-date {
+background: #52A0FD;
+box-shadow: 0 2px 8px RGBA(130, 180, 255, .9);
+}
+
+/* input dialog and this enables popup event handler for New Event*/
+.dialog {
+z-index: 5;
+background: #fff;
+position: absolute;
+width: 100%;
+height: 135%;
+/* left: 387px; */
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+display: none;
+border-left: 1px #aaa solid;
+}
+
+.dialog-header {
+margin: 20px;
+color: #333;
+text-align: center;
+font-size: 65px;
+padding: 120px 0 30px 0;
+}
+
+.form-container {
+margin-top: 25%;
+}
+
+.form-label {
+color: #333;
+font-size: 45px;
+}
+
+.input {
+border: none;
+background: none;
+border-bottom: 1px #aaa solid;
+display: block;
+margin-top: 10px;
+margin-bottom: 60px;
+width: 600px;
+height: 40px;
+font-size: 45px;
+text-align: center;
+transition: border-color 250ms;
+}
+
+.input:focus {
+outline: none;
+border-color: #00C9FB;
+font-size: 45px;
+}
+
+.error-input {
+border-color: #FF1744;
+font-size: 45px;
+}
+
+#ok-button{
+font-size: 30px;
+padding: 1.5rem 4.5rem;
+margin-right: 25px;
+} 
+
+#cancel-button {
+font-size: 30px;
+padding: 1.5rem 3.5rem;
+margin: 20px 25px 20px 25px;
+}
+#homepagetitle {
+font-size: 55px;
+font-family: Cinzel;
+padding-left: 25px;
+}
+
+.navbar-toggler-icon {
+width: 3.5em;
+height: 3.5em;
+background-size: 105% 105%;
+}
+
+#navbarStyle {
+font-size: 45px;
+}
+
+/* touching up on the links inside the nav bar */
+.navbar-nav {
+
+padding: 30px 25px;
+font-size: 50px;
+}
+
+.bg-light{ 
+background-color: #f8f9fa;  
+}    
+
+/* for laptop and desktop view -> media */
+@media screen and (min-width: 1024px) and (max-height: 1410px) {
+.content {
+max-width: 50%;
+margin-top: 23px;
+height: 62%;
+}
+
+
+.table-date {
+height: 30px;
+font-size: 18px;
+padding: 17px 0 17px 0;
+
+}
+
+.year-header {
+height: 55px;
+padding: 15px;
+}
+/* changes 2019 and arrow span */
+.year-header span {
+font-size: 35px;
+line-height: 20px;
+}
+
+
+/* changes month and arrow span media query */
+.month-header {
+height: 135px;
+padding: 15px;
+}
+
+.month-header span {
+font-size: 35px;
+line-height: 20px;
+margin-top: 35px;
+}
+
+.month-header .printMonth {
+line-height: 25px;
+font-size: 40px;
+}
+#months1 .month {
+padding-top: 10px;
+}
+.month {
+font-size: 14px;
+padding: 5px;
+}
+
+#label {
+position:absolute;
+left: 42.5%;
+top: 60px;
+font-size: 35px;
+}
+
+#prev, #next {
+display: none;
+}
+
+.days-table {
+padding-top: 5px;
+}
+
+.calendar-container {
+height: 100%;
+}
+
+#add-button {
+right: 20px;
+bottom: 25px;
+font-size: 31px;
+padding: 15px 23px;
+}
+.events-container {
+width: 100%;      
+}
+
+.event-card {
+margin: 15px auto;
+min-height: 45px;
+padding: 20px 0 20px 0;
+width: 75%;
+
+}
+
+.day {
+font-size: 50%;
+padding-bottom: 10px;
+}
+
+#bottom-container {
+width: 70.5%;
+margin: auto;
+}
+
+.event-count, .event-name {
+font-size: 25px;
+}
+
+#navbarStyle {
+font-size: 15px;
+padding: 5px;
+}
+
+.navbar-nav {
+font-size: 17px;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+}
+#homepagetitle {
+font-size: 23px;
+padding: 20px;
+}
+
+
+/* laptop */
+select {
+display: inherit;
+width: 120px;
+color: transparent;
+font-size: 35px;
+border: 0;
+border-radius: 5px;
+height: 34px;
+background: url("https://chronos1-3cda9.firebaseapp.com/bgPics/dropdown.png") no-repeat right transparent;
+-webkit-appearance: none;
+background-position-x: 75px;
+background-size: auto;
+left: 42.6%;
+top: 85px;
+position: absolute;
+}
+
+/* input dialog and this enables popup event handler for New Event*/
+.dialog {
+height: 100%;
+}
+
+.dialog-header {
+margin: 20px;
+color: #333;
+text-align: center;
+font-size: 40px;
+padding: 40px 0 20px 0;
+}
+
+.form-container {
+margin: 3%;
+}
+
+.form-label {
+color: #333;
+font-size: 25px;
+}
+
+.input {
+border: none;
+background: none;
+border-bottom: 1px #aaa solid;
+display: block;
+margin-top: 5px;
+margin-bottom: 40px;
+width: 300px;
+height: 40px;
+font-size: 20px;
+}
+.error-input {
+border-color: #FF1744;
+font-size: 45px;
+}
+#ok-button{
+font-size: 16px;
+padding: 0.9rem 3.5rem;
+} 
+
+#cancel-button {
+font-size: 16px;
+padding: 0.9rem 2.5rem;
+}
+
+}
