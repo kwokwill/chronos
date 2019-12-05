@@ -8,24 +8,35 @@
     </head>
     <body>
 
-        <h1>COMP 1930 TRIAL RUN</h1>
+        <h1>COURSE POSTING FORM</h1>
 
         <div class="content">
 <!-- adding margin bottom to create separation of form and list -->
 <!-- onsubmit will allow time for js to load into firebase and refresh afterwards for future rendering -->
-            <form id="add-1510-form" style="margin-bottom: 7%">
-                <input type="text" name="name" placeholder="Assignment">
-                <input type="date" name="dueDate" placeholder="Due date">
+            <form id="add-1116-form" style="margin-bottom: 7%" >
+                <p>Which course do you want to add an assignment to?</p>
+                <select name="courseSelect" id="wow">
+                    <option value=""></option>
+                    <option value="COMP1100">COMP1100</option>
+                    <option value="COMP1113">COMP1113</option>
+                    <option value="COMP1116">COMP1116</option>
+                    <option value="COMP1510">COMP1510</option>
+                    <option value="COMP1536">COMP1536</option>
+                    <option value="COMP1712">COMP1712</option>
+                    <option value="COMP1930">COMP1930</option>
+                </select>
+                <br>
+                <input type="text" name="name" placeholder="Name of Assignment">
+                <input type="date" name="dueDate" required="required" placeholder="Due date">
+                <textarea rows="4" cols="50" name="description" placeholder="Description"></textarea>
                 <button id="myButton">Add to List!</button>
             </form>
 
-            <ul id="COMP1510-list"></ul>
+            <ul id="COMP1116-list"></ul>
 
         </div>
 
         <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
-
-
 
         <script>
             // Initialize Firebase
@@ -49,6 +60,6 @@
 
             db.settings({ timestampsInSnapshots: true }); 
         </script>
-        <script src="../js/fbtoform1510.js"></script>
+        <script src="../js/dbpost.js"></script>
     </body>
 </html>
