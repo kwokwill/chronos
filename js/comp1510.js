@@ -18,8 +18,9 @@ const workList = document.querySelector('.list-group');
       desc.textContent = doc.data().description;
       li.setAttribute('data-id', doc.id);
       name.textContent = doc.data().name;
-      li.appendChild(desc);
+      
       li.appendChild(name);
+      li.appendChild(desc);
       li.appendChild(dueDate);
       li.appendChild(cross);
 
