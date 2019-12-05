@@ -31,13 +31,13 @@ const workList = document.querySelector('.list-group');
       cross.addEventListener('click', (e) => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute('data-id');
-        db.collection('COMP1930').doc(id).delete();
+        db.collection('COMP1113').doc(id).delete();
       });
     }
     // real-time listener
 
 
-    db.collection("COMP1930").orderBy("dueDate", "desc").onSnapshot(snapshot => {
+    db.collection("COMP1113").orderBy("dueDate", "desc").onSnapshot(snapshot => {
       let changes = snapshot.docChanges();
       changes.forEach(change => {
 
