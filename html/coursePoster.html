@@ -8,13 +8,13 @@
     </head>
     <body>
 
-        <h1>COMP 1116 TRIAL RUN</h1>
+        <h1>COURSE POSTING FORM</h1>
 
         <div class="content">
 <!-- adding margin bottom to create separation of form and list -->
 <!-- onsubmit will allow time for js to load into firebase and refresh afterwards for future rendering -->
             <form id="add-1116-form" style="margin-bottom: 7%" >
-                <p>Which course do you want to add an assignement to?</p>
+                <p>Which course do you want to add an assignment to?</p>
                 <select name="courseSelect" id="wow">
                     <option value=""></option>
                     <option value="COMP1100">COMP1100</option>
@@ -62,6 +62,6 @@
 
             db.settings({ timestampsInSnapshots: true }); 
         </script>
-        <script src="../js/fbtoform1116.js"></script>
+        <script src="../js/dbpost.js"></script>
     </body>
 </html>
