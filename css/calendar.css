@@ -284,8 +284,8 @@ position: absolute;
 right: 20px;
 bottom: 40px;
 padding: 30px 60px;
-font-size: 40px;
-border-radius: 40px;
+font-size: 100px;
+border-radius: 60px;
 }
 
 #add-button:hover,
@@ -568,7 +568,7 @@ height: 100%;
 #add-button {
 right: 20px;
 bottom: 25px;
-font-size: 31px;
+font-size: 45px;
 padding: 15px 23px;
 }
 .events-container {
