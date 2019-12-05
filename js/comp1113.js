@@ -7,6 +7,7 @@ const workList = document.querySelector('.list-group');
       let dueDate = document.createElement('p');
       let cross = document.createElement('div');
       let desc = document.createElement('div');
+      name.setAttribute("id","title");
 
       var stringMonth = doc.data().dueDate + '';
       var res = stringMonth.split("-"); // turn the date into a list format (Split by / if needed)
