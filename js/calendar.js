@@ -96,7 +96,7 @@
       date.setFullYear(new_year);
       init_calendar(date);
     }
-
+    // Event handler when year is chosen on the desktop view
     function year_chosen(event){
       $("#dialog").hide(250);
       var date = event.data.date;
@@ -279,8 +279,7 @@
       }
       monthNum += "";
         
-        
-       
+        // Reading from database to display event
         db.collection("users/").doc(user.uid).collection('cally').doc(year).collection(monthNum).doc(day).collection("info").get().then(function(snap){
           console.log(snap);
           snap.forEach(function(doc){
