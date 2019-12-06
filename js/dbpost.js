@@ -1,3 +1,5 @@
+//This file contains functions that allows administrators
+//to post due dates on the course pages.
 const workList = document.querySelector('#COMP1116-list');
 const form = document.querySelector('#add-1116-form');
 

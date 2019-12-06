@@ -1,5 +1,10 @@
+//Takes saved due dates posted on firebase and
+//displays them on the specific course page.
 const workList = document.querySelector('.list-group');
 
+//Renders the document on firebase that corresponds to
+//HTML elements on the course page.
+//doc is the documents in this course's collection.
     function renderWork(doc) {
       let li = document.createElement('a');
       li.classList.add("testing", "list-group-item", "list-group-item-action", "flex-column", "align-items-start");
@@ -34,9 +39,10 @@ const workList = document.querySelector('.list-group');
         db.collection('COMP1930').doc(id).delete();
       });
     }
-    // real-time listener
 
-
+// real-time listener
+//Orders the due dates in firebase by descending order to be
+//displayed on the course page.
     db.collection("COMP1930").orderBy("dueDate", "desc").onSnapshot(snapshot => {
       let changes = snapshot.docChanges();
       changes.forEach(change => {
