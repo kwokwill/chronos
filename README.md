@@ -10,8 +10,11 @@ Chronos was built with Firebase, Firestore, HTML, CSS, and JS.
 
 
 From the Chronos team,
-
+<br>
 Adam
+<br>
 Charlie
+<br>
 William
+<br>
 Group 16.
