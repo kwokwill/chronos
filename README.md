@@ -9,7 +9,7 @@ app - working both on mobile and on desktops.
 Chronos strives to provide CST students with the best calendar and course view all in the tip of their fingers.
 Chronos was built with Firebase, Firestore, HTML, CSS, and JS. 
 <br>
-
+<br>
 Information about content in project folder:
 <ul>
   <li>Index.html is the initial landing page of our application.</li>
@@ -20,7 +20,7 @@ Information about content in project folder:
   <li>Any pictures or backgrounds used in our application are found in the bgPics, GeometricGradientBackgrounds, and IconPics folder.</li>
 
 </ul>
-<br><br><br>
+<br><br>
 From the Chronos team,
 <br>
 Adam
