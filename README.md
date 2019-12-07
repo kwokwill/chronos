@@ -17,8 +17,10 @@ Information about content in project folder:
   <li>CourseV4.html is the homepage after the user logs-in to their accounts.</li>
   <li>html folder contains the html files for the calendar, individual course pages, and administrator form poster.</li>
   <li>js folder contains all the javascript files.</li>
+  <li>Any pictures or backgrounds used in our application are found in the bgPics, GeometricGradientBackgrounds, and IconPics folder.</li>
 
 </ul>
+<br><br><br>
 From the Chronos team,
 <br>
 Adam
